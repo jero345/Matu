@@ -170,7 +170,13 @@ El PDF es estático; estas piezas se resolvieron como corresponde en web:
 
 ## Herramientas de verificación
 
-`tools/` guarda los scripts usados para contrastar el resultado con el PDF:
+`tools/` guarda los scripts usados para contrastar el resultado con el PDF. No son
+parte del sitio, así que Playwright se instala aparte para no engordar el build de
+producción:
+
+```bash
+npm install playwright --no-save && npx playwright install chromium
+```
 
 ```bash
 node tools/shot.mjs      # página completa a 1920px, con las animaciones ya resueltas
