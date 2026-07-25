@@ -64,7 +64,9 @@ export default function Header() {
         </nav>
 
         {/* sits outside the measured nav so the artboard spacing stays exact */}
-        <CartButton className="lg:absolute lg:right-[3.4rem] lg:top-[0.25rem]" />
+        {/* absolute so it never shifts the measured nav; `top` is the optical
+            centre of the links, and it follows the header when it compacts */}
+        <CartButton className="transition-[top] duration-500 lg:absolute lg:right-[3.4rem] lg:top-[3.4125rem] lg:[html.is-scrolled_&]:top-[1.6375rem]" />
 
         <div
           className={`absolute inset-x-6 top-full mt-4 origin-top overflow-hidden rounded-xl bg-ink/95 text-lime backdrop-blur transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] lg:hidden ${

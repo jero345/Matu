@@ -57,11 +57,13 @@ hamburguesa en la cabecera.
 dos piezas que no estaban en esa carpeta y se exportaron del PDF:
 
 - `mate-ritual.jpg` — la foto del mate en el sector *Our Story*.
-- `est-pegasus.png` — el pegaso con `EST '25` del sello *PROTECT THE WILD*, recortado del
-  vector y pasado a PNG con transparencia.
 - `hero-jungle.webp` — la plancha de selva del hero. `FONDO1.webp` es un recorte más
   cerrado de la misma foto, así que el hero usa el encuadre original del diseño. El
   oscurecimiento del hero (`brightness .52`) también replica el del PDF.
+
+El sello *PROTECT THE WILD* es `CRUZ MATU.svg` tal cual viene de `recursos/`
+(`cruz-matu.svg`): vector puro, con el hueco crema entre el filete y el cuerpo
+transparente, así toma el fondo de la sección.
 
 `SOL.webp` se pinta con `mask-image` (componente `Star`) para poder teñir la estrella de
 verde o lima según el fondo.
