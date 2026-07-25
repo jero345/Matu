@@ -80,10 +80,18 @@ src/
   hooks/
     useReveal.js          IntersectionObserver -> is-inview
     useScrollFx.js        parallax, progreso, skew de marquesina, cabecera
+  context/
+    CartContext.jsx       carrito (reducer + localStorage)
+  lib/
+    payment.js            hand-off al proveedor de pago
   components/
     Preloader.jsx         cortina de entrada
     ScrollProgress.jsx    barra de progreso de lectura
     SplitLines.jsx        titulares línea por línea con máscara
+    CartButton.jsx        contador en la cabecera
+    CartDrawer.jsx        cajón lateral del carrito
+    Checkout.jsx          checkout en tres pasos
+    checkout/             campos y resumen del pedido
     Header.jsx            nav + logo (menú hamburguesa en móvil)
     Hero.jsx              portada
     Marquee.jsx           bandas lima animadas
@@ -158,6 +166,40 @@ El escalonado se controla con `--d` por elemento.
 final, sin transiciones, bucles ni parallax. Los estados ocultos viven bajo `.js`,
 así que sin JavaScript la página se ve completa.
 
+## Tienda: carrito y checkout
+
+Estado en `src/context/CartContext.jsx` (reducer + `localStorage`, clave
+`matu.cart.v1`). Al recargar se descartan las líneas cuyo producto ya no exista en
+el catálogo, así un cambio en `data.js` no rompe carritos viejos.
+
+- **ADD TO BAG** agrega el producto, la etiqueta gira a *ADDED* y se abre el cajón.
+- **Cajón lateral** (`CartDrawer.jsx`): líneas con miniatura, control de cantidad,
+  quitar, subtotal y medidor de envío gratis (a partir de **90 USD**, en
+  `FREE_SHIPPING_FROM`). Cierra con `Esc` o tocando fuera; bloquea el scroll del
+  fondo.
+- **Contador** en la cabecera, a la derecha, fuera del nav medido para no mover ni
+  un píxel de la maqueta original.
+- **Checkout** (`Checkout.jsx`) en tres pasos — *Details · Delivery · Payment* —
+  con resumen del pedido siempre visible, validación de campos obligatorios y de
+  email, dos métodos de envío, y pantalla de confirmación con número de referencia.
+
+### Cobrar de verdad
+
+El checkout **no pide datos de tarjeta**: el comprador termina el pago en la página
+del proveedor. Es la única forma de cobrar desde un front estático sin quedar a
+cargo de datos sensibles de tarjetas.
+
+Para activarlo hay que crear una función serverless que arme la sesión de pago con
+tu clave secreta y devuelva su URL, y apuntar la variable de entorno:
+
+```bash
+VITE_CHECKOUT_ENDPOINT=/api/checkout
+```
+
+`src/lib/payment.js` tiene el ejemplo completo para Stripe Checkout (Mercado Pago
+funciona igual con una Preference y su `init_point`). Sin esa variable el flujo
+corre en modo demo: registra el pedido y avisa que no se cobró nada.
+
 ## Otras interacciones
 
 El PDF es estático; estas piezas se resolvieron como corresponde en web:
@@ -184,6 +226,8 @@ node tools/mobile.mjs    # 390 y 768px, reporta desbordes horizontales
 node tools/probe.mjs     # rects reales del DOM para comparar con el artboard
 node tools/anim.mjs      # fotogramas a mitad de animación de cada sección
 node tools/hover.mjs     # estados hover
+node tools/cart.mjs      # recorre agregar al carrito -> checkout -> confirmación
+node tools/checkbuild.mjs # sirve dist/ y revisa que no falle ningún recurso
 ```
 
 `shot.mjs` recorre la página para que se disparen todos los observers y luego

@@ -276,10 +276,22 @@ html.is-locked body {
  * 3. Hover / interaction
  * ================================================================== */
 
-/* nav + inline links: rule sweeps in from the left, out to the right */
-.link-underline {
-  position: relative;
+/* These live in the components layer on purpose: both set `position: relative`,
+   and utilities must be able to override it (ADD TO BAG is `lg:absolute`). */
+@layer components {
+  /* nav + inline links: rule sweeps in from the left, out to the right */
+  .link-underline {
+    position: relative;
+  }
+
+  /* buttons fill from the bottom up */
+  .btn-sweep {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+  }
 }
+
 .link-underline::after {
   content: '';
   position: absolute;
@@ -298,12 +310,6 @@ html.is-locked body {
   transform-origin: left;
 }
 
-/* buttons fill from the bottom up */
-.btn-sweep {
-  position: relative;
-  overflow: hidden;
-  isolation: isolate;
-}
 .btn-sweep::before {
   content: '';
   position: absolute;

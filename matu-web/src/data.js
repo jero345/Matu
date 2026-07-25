@@ -5,44 +5,79 @@ export const NAV = [
   { label: 'Shop', href: '#shop' },
 ]
 
+export const CURRENCY = 'USD'
+
+/** `30` -> `30 USD`, matching how prices are set on the artboard. */
+export const money = (value) =>
+  `${Number.isInteger(value) ? value : value.toFixed(2)} ${CURRENCY}`
+
 /* `img` offsets are measured from the top-left of the product tile, in rem
    (1rem === 16 artboard px on desktop). */
 export const PRODUCTS = [
   {
+    id: 'matu-1000',
     image: '/img/box-can.webp',
     alt: 'MATU 1.000g yerba mate set box',
     img: { left: '5.7375rem', top: '2.3375rem', width: '14.3625rem' },
     category: 'YERBA MATE',
     kind: 'SET BOX',
     name: 'MATU 1.000g',
-    price: '30 USD',
+    price: 30,
   },
   {
+    id: 'matu-800',
     image: '/img/tin-can-2.webp',
     alt: 'MATU 800g yerba mate tin can',
     img: { left: '1.675rem', top: '3.3375rem', width: '19.55rem' },
     category: 'YERBA MATE',
     kind: 'TIN CAN',
     name: 'MATU 800g Box',
-    price: '30 USD',
+    price: 30,
   },
   {
+    id: 'bombilla',
     image: '/img/bombilla.webp',
     alt: 'Stainless steel bombilla filter straw',
     img: { left: '1.6rem', top: '1.125rem', width: '19.125rem' },
     category: 'YERBA MATE',
     kind: 'TEA DRINKING TOOLS',
     name: 'BOMBILLA FILTER STRAW',
-    price: '30 USD',
+    price: 30,
   },
   {
+    id: 'french-press',
     image: '/img/prensa.webp',
     alt: 'Green glass french press',
     img: { left: '2.63rem', top: '2.2rem', width: '17.894rem' },
     category: 'YERBA MATE',
     kind: 'TEA DRINKING TOOLS',
     name: 'FRENCH PRESS',
-    price: '30 USD',
+    price: 30,
+  },
+]
+
+export const FREE_SHIPPING_FROM = 90
+
+export const SHIPPING_METHODS = [
+  { id: 'standard', label: 'Standard', detail: '5–8 business days', price: 9 },
+  { id: 'express', label: 'Express', detail: '2–3 business days', price: 19 },
+]
+
+/**
+ * Hosted checkouts: the shopper is handed off to the provider's own page, so no
+ * card details are ever typed into this site. See `startPayment` in
+ * `src/lib/payment.js` for where to plug the real one in.
+ */
+export const PAYMENT_METHODS = [
+  {
+    id: 'card',
+    label: 'Credit or debit card',
+    detail: 'Secure hosted checkout — you finish the payment on the provider’s page.',
+  },
+  {
+    id: 'mercadopago',
+    label: 'Mercado Pago',
+    detail: 'Pay in ARS, with local instalments.',
   },
 ]
 

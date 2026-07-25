@@ -1,10 +1,53 @@
+import { useEffect, useState } from 'react'
 import SplitLines from './SplitLines'
-import { PRODUCTS } from '../data'
+import { useCart } from '../context/CartContext'
+import { PRODUCTS, money } from '../data'
 
 const SUB = [
   'Agro-ecological, 100% Argentine yerba mate',
   'and the tools designed to brew it your way.',
 ]
+
+function AddToBag({ product }) {
+  const { add } = useCart()
+  const [added, setAdded] = useState(false)
+
+  useEffect(() => {
+    if (!added) return
+    const t = setTimeout(() => setAdded(false), 1600)
+    return () => clearTimeout(t)
+  }, [added])
+
+  return (
+    <button
+      type="button"
+      onClick={() => {
+        add(product.id)
+        setAdded(true)
+      }}
+      aria-label={`Add ${product.name} to bag`}
+      className="btn-sweep mt-auto h-9 w-full shrink-0 overflow-hidden rounded-full border border-ink text-[0.7rem] transition-colors duration-500 hover:text-lime lg:absolute lg:inset-x-0 lg:top-[33.2625rem] lg:mt-0 lg:h-[2.85rem] lg:text-[1.35rem]"
+    >
+      <span className="relative block h-full">
+        <span
+          className={`absolute inset-0 grid place-items-center transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+            added ? '-translate-y-full opacity-0' : 'translate-y-0 opacity-100'
+          }`}
+        >
+          ADD TO BAG
+        </span>
+        <span
+          aria-hidden="true"
+          className={`absolute inset-0 grid place-items-center transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+            added ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
+          }`}
+        >
+          ADDED
+        </span>
+      </span>
+    </button>
+  )
+}
 
 export default function Shop() {
   return (
@@ -58,16 +101,11 @@ export default function Shop() {
                 {product.name}
               </h3>
               <span className="shrink-0 text-[0.7rem] lg:text-[1.0938rem] lg:leading-[1.3125rem]">
-                {product.price}
+                {money(product.price)}
               </span>
             </div>
 
-            <button
-              type="button"
-              className="btn-sweep mt-auto h-9 w-full shrink-0 rounded-full border border-ink text-[0.7rem] transition-colors duration-500 hover:text-lime lg:absolute lg:inset-x-0 lg:top-[33.2625rem] lg:mt-0 lg:h-[2.85rem] lg:text-[1.35rem]"
-            >
-              ADD TO BAG
-            </button>
+            <AddToBag product={product} />
           </article>
         ))}
       </div>

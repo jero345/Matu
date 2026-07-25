@@ -1,8 +1,11 @@
 import { useCallback, useState } from 'react'
 import useReveal from './hooks/useReveal'
 import useScrollFx from './hooks/useScrollFx'
+import { CartProvider } from './context/CartContext'
 import Preloader from './components/Preloader'
 import ScrollProgress from './components/ScrollProgress'
+import CartDrawer from './components/CartDrawer'
+import Checkout from './components/Checkout'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import Marquee from './components/Marquee'
@@ -26,35 +29,40 @@ export default function App() {
   useScrollFx()
 
   return (
-    <div className="page relative">
-      <Preloader onDone={handleDone} />
-      <ScrollProgress />
-      <Header />
-      <main>
-        <Hero ready={ready} />
-        <Marquee
-          text="FROM THE GUARANI  TO THE GAUCHOS  TO YOU"
-          gap="1.9875rem"
-          size="1.5rem"
-          duration="52s"
-        />
-        <CleanestSip />
-        <Shop />
-        <OurStory />
-        <Marquee
-          text="SHOP  MATU NOW"
-          gap="3.797rem"
-          size="1.7875rem"
-          duration="38s"
-        />
-        <WhyMatu />
-        <HealthBenefits />
-        <FounderFrame />
-        <GrownWithin />
-        <Species />
-        <Newsletter />
-      </main>
-      <Footer />
-    </div>
+    <CartProvider>
+      <div className="page relative">
+        <Preloader onDone={handleDone} />
+        <ScrollProgress />
+        <Header />
+        <main>
+          <Hero ready={ready} />
+          <Marquee
+            text="FROM THE GUARANI  TO THE GAUCHOS  TO YOU"
+            gap="1.9875rem"
+            size="1.5rem"
+            duration="52s"
+          />
+          <CleanestSip />
+          <Shop />
+          <OurStory />
+          <Marquee
+            text="SHOP  MATU NOW"
+            gap="3.797rem"
+            size="1.7875rem"
+            duration="38s"
+          />
+          <WhyMatu />
+          <HealthBenefits />
+          <FounderFrame />
+          <GrownWithin />
+          <Species />
+          <Newsletter />
+        </main>
+        <Footer />
+      </div>
+
+      <CartDrawer />
+      <Checkout />
+    </CartProvider>
   )
 }
