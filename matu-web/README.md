@@ -137,6 +137,7 @@ pequeños, así que no suma peso al bundle.
 | `zoom` | entra desde una escala mayor |
 | `clip` | cortina que se retrae dejando la foto, con push-in de la imagen |
 | `grow` | la línea vertical se dibuja hacia abajo |
+| `enter-right` / `enter-left` | el producto entra desde fuera de cuadro, girado y más grande, y se acomoda |
 
 El escalonado se controla con `--d` por elemento.
 
@@ -210,10 +211,13 @@ del teclado y se queda quieto con `prefers-reduced-motion`. Precarga la secuenci
 completa antes de animar.
 
 Está montado sobre las latas de *The cleanest sip*. **Sin secuencia cargada
-muestra el render fijo**, así que hoy la página se ve igual que antes. Para
+muestra el render fijo**, con la animación de entrada descrita arriba. Para
 activarlo hay que dejar los fotogramas en `public/360/can/` y anotar la cantidad
 en `src/lib/frames.js` — el detalle está en [public/360/README.md](public/360/README.md),
 junto con el motivo por el que no alcanza con los renders que ya tenemos.
+
+Las latas usan tres envoltorios anidados a propósito: el parallax de scroll, la
+entrada y la flotación en reposo necesitan cada uno su propio `transform`.
 
 ## Otras interacciones
 

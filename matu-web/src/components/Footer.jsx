@@ -33,11 +33,17 @@ export default function Footer() {
           SHOP NOW
         </a>
 
-        <img
-          src="/img/tin-can-2.webp"
-          alt="MATU yerba mate tins"
-          className="pointer-events-none mt-6 w-[70%] transition-transform duration-[1100ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/cta:-translate-y-[0.9rem] group-hover/cta:scale-[1.03] lg:absolute lg:left-[20.4375rem] lg:top-[-3.6rem] lg:mt-0 lg:w-[24.0625rem] lg:max-w-none"
-        />
+        <div
+          data-reveal="enter-right"
+          style={{ '--d': '320ms' }}
+          className="pointer-events-none mt-6 w-[70%] lg:absolute lg:left-[20.4375rem] lg:top-[-3.6rem] lg:mt-0 lg:w-[24.0625rem] lg:max-w-none"
+        >
+          <img
+            src="/img/tin-can-2.webp"
+            alt="MATU yerba mate tins"
+            className="w-full transition-transform duration-[1100ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/cta:-translate-y-[0.9rem] group-hover/cta:scale-[1.03]"
+          />
+        </div>
       </div>
 
       <nav className="flex flex-wrap gap-x-8 gap-y-3 lg:absolute lg:left-[14.5313rem] lg:top-[1.3831rem] lg:gap-[3.75rem]">

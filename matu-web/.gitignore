@@ -1,5 +1,8 @@
 node_modules
 dist
+
+# scratch capture scripts (underscore prefix), not part of the project
+tools/_*.mjs
 .vite
 *.local
 .DS_Store

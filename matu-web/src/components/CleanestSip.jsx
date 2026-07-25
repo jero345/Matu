@@ -35,15 +35,24 @@ export default function CleanestSip() {
         className="relative z-10 mt-8 max-w-[34ch] text-[1.05rem] leading-[1.35] text-white lg:absolute lg:left-[14.1563rem] lg:top-[42.1632rem] lg:mt-0 lg:max-w-none lg:text-[2.575rem] lg:leading-[2.6875rem]"
       />
 
-      <Product360
-        frames={frames('can')}
-        fallback="/img/tin-can.webp"
-        alt="MATU yerba mate tin cans"
-        data-reveal="fade"
+      {/* three nested wrappers on purpose: the scroll parallax, the entrance and
+          the idle drift each own a transform and would otherwise fight */}
+      <div
         data-parallax="-86"
         className="parallax relative z-0 mx-auto mt-10 w-[78%] lg:absolute lg:left-[65.32rem] lg:top-[-3.4625rem] lg:mt-0 lg:w-[67.72rem] lg:max-w-none"
-        imgClassName="w-full"
-      />
+      >
+        <div data-reveal="enter-right" style={{ '--d': '240ms' }}>
+          <div className="drift-slow">
+            <Product360
+              frames={frames('can')}
+              fallback="/img/tin-can.webp"
+              alt="MATU yerba mate tin cans"
+              className="w-full"
+              imgClassName="w-full"
+            />
+          </div>
+        </div>
+      </div>
     </section>
   )
 }

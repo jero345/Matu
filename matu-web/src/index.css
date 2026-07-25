@@ -139,6 +139,28 @@ html.is-locked body {
   transform: none;
 }
 
+/* Product entrance: the pack swings in from off-canvas, a little larger and
+   tilted, and settles into place. Keep it on its own wrapper — the scroll
+   parallax and the idle drift each need a transform of their own. */
+.js [data-reveal='enter-right'],
+.js [data-reveal='enter-left'] {
+  opacity: 0;
+  transition:
+    opacity 1.1s var(--ease-out-expo) var(--d),
+    transform 1.6s var(--ease-out-expo) var(--d);
+}
+.js [data-reveal='enter-right'] {
+  transform: translate3d(19%, 8%, 0) rotate(9deg) scale(1.07);
+}
+.js [data-reveal='enter-left'] {
+  transform: translate3d(-19%, 8%, 0) rotate(-9deg) scale(1.07);
+}
+.js [data-reveal='enter-right'].is-inview,
+.js [data-reveal='enter-left'].is-inview {
+  opacity: 1;
+  transform: none;
+}
+
 /* hairline rules draw themselves down */
 .js [data-reveal='grow'] {
   transform: scaleY(0);
