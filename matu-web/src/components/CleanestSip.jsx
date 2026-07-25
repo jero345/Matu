@@ -1,4 +1,6 @@
 import SplitLines from './SplitLines'
+import Product360 from './Product360'
+import { frames } from '../lib/frames'
 
 const HEAD = ['The cleanest', 'sip from soil', 'to straw.']
 const BODY = [
@@ -33,13 +35,14 @@ export default function CleanestSip() {
         className="relative z-10 mt-8 max-w-[34ch] text-[1.05rem] leading-[1.35] text-white lg:absolute lg:left-[14.1563rem] lg:top-[42.1632rem] lg:mt-0 lg:max-w-none lg:text-[2.575rem] lg:leading-[2.6875rem]"
       />
 
-      <img
-        src="/img/tin-can.webp"
+      <Product360
+        frames={frames('can')}
+        fallback="/img/tin-can.webp"
         alt="MATU yerba mate tin cans"
         data-reveal="fade"
         data-parallax="-86"
-        style={{ '--d': '180ms' }}
         className="parallax relative z-0 mx-auto mt-10 w-[78%] lg:absolute lg:left-[65.32rem] lg:top-[-3.4625rem] lg:mt-0 lg:w-[67.72rem] lg:max-w-none"
+        imgClassName="w-full"
       />
     </section>
   )

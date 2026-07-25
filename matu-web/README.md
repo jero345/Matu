@@ -202,6 +202,19 @@ VITE_CHECKOUT_ENDPOINT=/api/checkout
 funciona igual con una Preference y su `init_point`). Sin esa variable el flujo
 corre en modo demo: registra el pedido y avisa que no se cobró nada.
 
+## Giro 360 del producto
+
+`Product360.jsx` reproduce un turntable: se arrastra para girar, tiene inercia al
+soltar, gira solo mientras está en pantalla y sin tocar, responde a las flechas
+del teclado y se queda quieto con `prefers-reduced-motion`. Precarga la secuencia
+completa antes de animar.
+
+Está montado sobre las latas de *The cleanest sip*. **Sin secuencia cargada
+muestra el render fijo**, así que hoy la página se ve igual que antes. Para
+activarlo hay que dejar los fotogramas en `public/360/can/` y anotar la cantidad
+en `src/lib/frames.js` — el detalle está en [public/360/README.md](public/360/README.md),
+junto con el motivo por el que no alcanza con los renders que ya tenemos.
+
 ## Otras interacciones
 
 El PDF es estático; estas piezas se resolvieron como corresponde en web:

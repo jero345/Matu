@@ -83,7 +83,7 @@ export default function WhyMatu() {
         <img
           src="/img/circular-symbol.webp"
           alt="Cleanest sip from soil to straw"
-          className="spin-slow absolute left-6 top-[-2.5rem] w-[7rem] lg:left-[61.4375rem] lg:top-[0.5rem] lg:w-[23.75rem] lg:max-w-none"
+          className="spin-slow absolute left-6 top-[-1.75rem] w-[5rem] lg:left-[65rem] lg:top-[4.0625rem] lg:w-[16.625rem] lg:max-w-none"
         />
       </div>
     </section>
