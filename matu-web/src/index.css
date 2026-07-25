@@ -26,6 +26,15 @@
 
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in-out-quint: cubic-bezier(0.83, 0, 0.17, 1);
+
+  /* `lg:` is the artboard. Because the whole composition is pinned to a 1920px
+     canvas that scales with the viewport, engaging it too early shrinks the
+     design's own micro-typography (rails, product labels, gauge copy — 14-17px
+     on the artboard) below legibility: at 1024px the root em is 8.5px and those
+     labels land at 7-9px. 1280px keeps the smallest type at ~10px and every
+     common laptop width (1280/1366/1440/1536/1920) on the intended layout;
+     everything narrower runs the fluid composition below. */
+  --breakpoint-lg: 1280px;
 }
 
 html {
@@ -35,10 +44,13 @@ html {
 }
 
 /* The artboard is 1920 wide -> 120rem. Lock 1rem to 1/120th of the
-   viewport so the desktop composition stays proportional at any width. */
-@media (min-width: 1024px) {
+   viewport so the desktop composition stays proportional at any width.
+   `--sbw` is the classic scrollbar width, measured once in main.jsx: `100vw`
+   counts it but the content box does not, so without it the canvas is laid out
+   ~15px wider than the space it has and the right-hand rail gets clipped. */
+@media (min-width: 1280px) {
   html {
-    font-size: calc(100vw / 120);
+    font-size: calc((100vw - var(--sbw, 0px)) / 120);
   }
 }
 
@@ -182,7 +194,7 @@ html.is-locked body {
   display: inline;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1280px) {
   .has-lines {
     display: flex;
     flex-direction: column;
