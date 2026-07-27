@@ -19,7 +19,7 @@ export default function GrownWithin() {
         as="h2"
         lines={HEAD}
         step={130}
-        className="text-center text-[2.6rem] leading-[1.02] tracking-[0.023em] lg:absolute lg:inset-x-0 lg:top-[4.4082rem] lg:text-[12.2188rem] lg:leading-[12.1813rem]"
+        className="text-center text-[clamp(2.6rem,7.2vw,6rem)] leading-[1.02] tracking-[0.023em] lg:absolute lg:inset-x-0 lg:top-[4.4082rem] lg:text-[12.2188rem] lg:leading-[12.1813rem]"
       />
 
       <Star
@@ -38,7 +38,7 @@ export default function GrownWithin() {
         className="absolute left-[78.25rem] top-[51.9375rem] hidden h-[9.6rem] w-px origin-top bg-ink/45 lg:block"
       />
 
-      <div className="mt-10 grid gap-10 lg:absolute lg:left-[6.9375rem] lg:top-[52.7815rem] lg:mt-0 lg:w-[106.125rem] lg:grid-cols-3 lg:gap-0">
+      <div className="mt-10 grid gap-10 md:grid-cols-3 md:gap-6 lg:absolute lg:left-[6.9375rem] lg:top-[52.7815rem] lg:mt-0 lg:w-[106.125rem] lg:gap-0">
         {FOREST_PILLARS.map((pillar, i) => (
           <div
             key={pillar.title}
@@ -46,10 +46,10 @@ export default function GrownWithin() {
             style={{ '--d': `${i * 130}ms` }}
             className="relative text-center lg:h-[8rem]"
           >
-            <h3 className="text-[1.1rem] lg:text-[1.75rem] lg:leading-[2.1rem]">
+            <h3 className="text-[clamp(1.1rem,1.9vw,1.45rem)] lg:text-[1.75rem] lg:leading-[2.1rem]">
               {pillar.title}
             </h3>
-            <p className="mx-auto mt-3 max-w-[38ch] text-[0.85rem] leading-[1.25] lg:absolute lg:left-1/2 lg:top-[3.4929rem] lg:mt-0 lg:w-[30rem] lg:max-w-none lg:-translate-x-1/2 lg:text-[1.4187rem] lg:leading-[1.5625rem]">
+            <p className="mx-auto mt-3 max-w-[38ch] text-[clamp(0.85rem,1.5vw,1.1rem)] leading-[1.3] lg:absolute lg:left-1/2 lg:top-[3.4929rem] lg:mt-0 lg:w-[30rem] lg:max-w-none lg:-translate-x-1/2 lg:text-[1.4187rem] lg:leading-[1.5625rem]">
               <Lines lines={pillar.lines} />
             </p>
           </div>

@@ -60,7 +60,7 @@ export default function Preloader({ onDone }) {
         />
       </div>
 
-      <span className="mt-5 font-geo text-[0.6rem] uppercase tracking-[0.34em] text-lime/70 lg:mt-[1.6rem] lg:text-[0.8rem]">
+      <span className="mt-5 font-geo text-[0.68rem] uppercase tracking-[0.34em] text-lime/70 lg:mt-[1.6rem] lg:text-[0.8rem]">
         Protect the wild
       </span>
 

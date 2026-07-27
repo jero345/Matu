@@ -24,7 +24,7 @@ export default function CleanestSip() {
         as="h2"
         lines={HEAD}
         step={125}
-        className="relative z-10 max-w-[9ch] text-[3.25rem] leading-[0.86] text-lime lg:absolute lg:left-[13.7563rem] lg:top-[12.1947rem] lg:max-w-none lg:text-[10.575rem] lg:leading-[8.925rem] lg:tracking-[-0.002em]"
+        className="relative z-10 max-w-[9ch] text-[clamp(3.25rem,9vw,7.5rem)] leading-[0.86] text-lime lg:absolute lg:left-[13.7563rem] lg:top-[12.1947rem] lg:max-w-none lg:text-[10.575rem] lg:leading-[8.925rem] lg:tracking-[-0.002em]"
       />
 
       <SplitLines
@@ -32,7 +32,7 @@ export default function CleanestSip() {
         lines={BODY}
         delay={260}
         step={90}
-        className="relative z-10 mt-8 max-w-[34ch] text-[1.05rem] leading-[1.35] text-white lg:absolute lg:left-[14.1563rem] lg:top-[42.1632rem] lg:mt-0 lg:max-w-none lg:text-[2.575rem] lg:leading-[2.6875rem]"
+        className="relative z-10 mt-8 max-w-[34ch] text-[clamp(1.05rem,2vw,1.5rem)] leading-[1.35] text-white lg:absolute lg:left-[14.1563rem] lg:top-[42.1632rem] lg:mt-0 lg:max-w-none lg:text-[2.575rem] lg:leading-[2.6875rem]"
       />
 
       {/* three nested wrappers on purpose: the scroll parallax, the entrance and

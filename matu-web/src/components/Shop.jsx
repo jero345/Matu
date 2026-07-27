@@ -26,7 +26,7 @@ function AddToBag({ product }) {
         setAdded(true)
       }}
       aria-label={`Add ${product.name} to bag`}
-      className="btn-sweep mt-auto h-9 w-full shrink-0 overflow-hidden rounded-full border border-ink text-[0.7rem] transition-colors duration-500 hover:text-lime lg:absolute lg:inset-x-0 lg:top-[33.2625rem] lg:mt-0 lg:h-[2.85rem] lg:text-[1.35rem]"
+      className="btn-sweep mt-auto h-11 w-full shrink-0 overflow-hidden rounded-full border border-ink text-[0.78rem] transition-colors duration-500 hover:text-lime lg:absolute lg:inset-x-0 lg:top-[33.2625rem] lg:mt-0 lg:h-[2.85rem] lg:text-[1.35rem]"
     >
       <span className="relative block h-full">
         <span
@@ -58,7 +58,7 @@ export default function Shop() {
       <SplitLines
         as="h2"
         lines={['BUILD YOUR RITUAL']}
-        className="text-center text-[2.5rem] leading-none tracking-[0.009em] lg:absolute lg:inset-x-0 lg:top-[3.7183rem] lg:text-[9.8875rem]"
+        className="text-center text-[clamp(2.5rem,7vw,5.6rem)] leading-none tracking-[0.009em] lg:absolute lg:inset-x-0 lg:top-[3.7183rem] lg:text-[9.8875rem]"
       />
 
       <SplitLines
@@ -66,10 +66,10 @@ export default function Shop() {
         lines={SUB}
         delay={220}
         step={80}
-        className="mt-4 text-center text-[1rem] leading-[1.3] lg:absolute lg:inset-x-0 lg:top-[16.4915rem] lg:mt-0 lg:text-[2.1063rem] lg:leading-[2.1938rem]"
+        className="mx-auto mt-4 max-w-[40rem] text-center text-[clamp(1rem,1.9vw,1.4rem)] leading-[1.35] lg:mx-0 lg:max-w-none lg:absolute lg:inset-x-0 lg:top-[16.4915rem] lg:mt-0 lg:text-[2.1063rem] lg:leading-[2.1938rem]"
       />
 
-      <div className="mt-10 grid grid-cols-2 gap-x-4 gap-y-8 lg:absolute lg:left-[11.625rem] lg:top-[23.9375rem] lg:mt-0 lg:flex lg:gap-[3.229rem]">
+      <div className="mt-10 grid grid-cols-2 gap-x-4 gap-y-8 min-[1024px]:grid-cols-4 lg:absolute lg:left-[11.625rem] lg:top-[23.9375rem] lg:mt-0 lg:flex lg:gap-[3.229rem]">
         {PRODUCTS.map((product, i) => (
           <article
             key={product.name}
@@ -91,16 +91,16 @@ export default function Shop() {
               />
             </div>
 
-            <div className="mt-3 flex items-baseline justify-between text-[0.6rem] tracking-[0.02em] lg:absolute lg:inset-x-0 lg:top-[27.6796rem] lg:mt-0 lg:text-[0.95rem] lg:leading-[1.14rem]">
+            <div className="mt-3 flex items-baseline justify-between text-[0.68rem] tracking-[0.02em] lg:absolute lg:inset-x-0 lg:top-[27.6796rem] lg:mt-0 lg:text-[0.95rem] lg:leading-[1.14rem]">
               <span>{product.category}</span>
               <span>{product.kind}</span>
             </div>
 
             <div className="mt-1 flex items-baseline justify-between gap-2 lg:absolute lg:inset-x-0 lg:top-[30.3741rem] lg:mt-0">
-              <h3 className="text-[0.8rem] lg:text-[1.2937rem] lg:leading-[1.5525rem]">
+              <h3 className="text-[0.86rem] lg:text-[1.2937rem] lg:leading-[1.5525rem]">
                 {product.name}
               </h3>
-              <span className="shrink-0 text-[0.7rem] lg:text-[1.0938rem] lg:leading-[1.3125rem]">
+              <span className="shrink-0 text-[0.78rem] lg:text-[1.0938rem] lg:leading-[1.3125rem]">
                 {money(product.price)}
               </span>
             </div>

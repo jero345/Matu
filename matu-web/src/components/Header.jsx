@@ -14,7 +14,7 @@ export default function Header() {
           onClick={() => setOpen((v) => !v)}
           aria-label="Menu"
           aria-expanded={open}
-          className="group pointer-events-auto flex flex-col gap-[5px] p-1 lg:hidden"
+          className="group pointer-events-auto -m-2.5 flex flex-col gap-[5px] p-2.5 lg:hidden"
         >
           <span
             className={`block h-px w-6 origin-center bg-lime transition-transform duration-300 ${open ? 'translate-y-[6px] rotate-45' : ''}`}
@@ -41,7 +41,7 @@ export default function Header() {
 
         <a
           href="#top"
-          className="pointer-events-auto lg:mx-[10.1rem] lg:ml-[10.1rem] lg:mr-[11.869rem]"
+          className="tap pointer-events-auto lg:mx-[10.1rem] lg:ml-[10.1rem] lg:mr-[11.869rem]"
           aria-label="MATU — inicio"
         >
           <img
@@ -79,7 +79,7 @@ export default function Header() {
                 key={item.label}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="translate-y-2 opacity-0 transition-all duration-500"
+                className="translate-y-2 py-1.5 opacity-0 transition-all duration-500"
                 style={
                   open
                     ? { transform: 'none', opacity: 1, transitionDelay: `${120 + i * 70}ms` }

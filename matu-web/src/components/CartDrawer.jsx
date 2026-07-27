@@ -88,7 +88,7 @@ export default function CartDrawer() {
             type="button"
             onClick={closeCart}
             aria-label="Close bag"
-            className="link-underline text-[0.8rem] uppercase tracking-[0.18em] text-cream/80 lg:text-[1rem]"
+            className="tap link-underline text-[0.8rem] uppercase tracking-[0.18em] text-cream/80 lg:text-[1rem]"
           >
             Close
           </button>
@@ -127,7 +127,7 @@ export default function CartDrawer() {
               <button
                 type="button"
                 onClick={closeCart}
-                className="link-underline text-[0.8rem] uppercase tracking-[0.2em] text-lime lg:text-[1rem]"
+                className="tap link-underline text-[0.8rem] uppercase tracking-[0.2em] text-lime lg:text-[1rem]"
               >
                 Browse the shop
               </button>
@@ -195,7 +195,7 @@ export default function CartDrawer() {
             <button
               type="button"
               onClick={closeCart}
-              className="mt-3 w-full text-[0.75rem] uppercase tracking-[0.18em] text-cream/60 transition-colors hover:text-lime lg:mt-[1rem] lg:text-[0.95rem]"
+              className="tap mt-3 w-full text-[0.75rem] uppercase tracking-[0.18em] text-cream/60 transition-colors hover:text-lime lg:mt-[1rem] lg:text-[0.95rem]"
             >
               Continue shopping
             </button>

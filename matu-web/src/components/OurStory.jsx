@@ -81,7 +81,7 @@ export default function OurStory() {
           as="h2"
           lines={HEAD}
           delay={120}
-          className="mt-3 text-[2.15rem] leading-[1.13] lg:absolute lg:left-[11.5rem] lg:top-[30.4729rem] lg:mt-0 lg:text-[5.2062rem] lg:leading-[5.9rem] lg:tracking-[-0.031em]"
+          className="mt-3 text-[clamp(2.15rem,5.4vw,4.2rem)] leading-[1.13] lg:absolute lg:left-[11.5rem] lg:top-[30.4729rem] lg:mt-0 lg:text-[5.2062rem] lg:leading-[5.9rem] lg:tracking-[-0.031em]"
         />
       </div>
 
@@ -108,7 +108,7 @@ export default function OurStory() {
       </figure>
 
       {/* ---- body copy ---- */}
-      <div className="relative z-10 mt-10 space-y-6 text-[1.05rem] leading-[1.35] lg:mt-0 lg:space-y-0 lg:text-[2.0375rem] lg:leading-[2.375rem]">
+      <div className="relative z-10 mt-10 max-w-[46rem] space-y-6 text-[clamp(1.05rem,1.9vw,1.35rem)] leading-[1.45] lg:mt-0 lg:max-w-none lg:space-y-0 lg:text-[2.0375rem] lg:leading-[2.375rem]">
         {PARAGRAPHS.map((p) => (
           <SplitLines key={p.pos} as="p" lines={p.lines} step={80} className={p.pos} />
         ))}
@@ -139,7 +139,7 @@ export default function OurStory() {
               type="button"
               aria-label={`Slide ${i + 1}`}
               onClick={() => setSlide(i)}
-              className={`size-3 rounded-full border border-lime transition-all duration-500 hover:scale-125 lg:size-[0.875rem] ${
+              className={`relative size-3 rounded-full border border-lime transition-all duration-500 before:absolute before:-inset-3 before:content-[''] hover:scale-125 lg:size-[0.875rem] ${
                 i === slide ? 'scale-110 bg-lime' : 'bg-transparent'
               }`}
             />

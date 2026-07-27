@@ -44,7 +44,7 @@ export default function FounderFrame() {
         lines={P1}
         delay={240}
         step={90}
-        className="mt-8 text-[0.95rem] leading-[1.35] text-lime lg:absolute lg:inset-x-0 lg:top-[26.6083rem] lg:mt-0 lg:text-[1.9438rem] lg:leading-[2.2625rem]"
+        className="mx-auto mt-8 max-w-[46rem] text-[clamp(0.95rem,1.8vw,1.3rem)] leading-[1.45] text-lime lg:mx-0 lg:max-w-none lg:absolute lg:inset-x-0 lg:top-[26.6083rem] lg:mt-0 lg:text-[1.9438rem] lg:leading-[2.2625rem]"
       />
 
       <SplitLines
@@ -52,7 +52,7 @@ export default function FounderFrame() {
         lines={P2}
         delay={420}
         step={90}
-        className="mt-6 text-[0.95rem] leading-[1.35] text-lime lg:absolute lg:inset-x-0 lg:top-[35.6583rem] lg:mt-0 lg:text-[1.9438rem] lg:leading-[2.2625rem]"
+        className="mx-auto mt-6 max-w-[46rem] text-[clamp(0.95rem,1.8vw,1.3rem)] leading-[1.45] text-lime lg:mx-0 lg:max-w-none lg:absolute lg:inset-x-0 lg:top-[35.6583rem] lg:mt-0 lg:text-[1.9438rem] lg:leading-[2.2625rem]"
       />
     </section>
   )

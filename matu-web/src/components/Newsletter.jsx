@@ -40,7 +40,7 @@ export default function Newsletter() {
         lines={HEAD}
         delay={110}
         step={120}
-        className="mt-3 text-[2.3rem] leading-[1.08] tracking-[-0.023em] lg:absolute lg:left-[11.3rem] lg:top-[6.6621rem] lg:mt-0 lg:text-[7.2062rem] lg:leading-[7.8063rem]"
+        className="mt-3 text-[clamp(2.3rem,5.6vw,4.4rem)] leading-[1.08] tracking-[-0.023em] lg:absolute lg:left-[11.3rem] lg:top-[6.6621rem] lg:mt-0 lg:text-[7.2062rem] lg:leading-[7.8063rem]"
       />
 
       <Star
@@ -69,11 +69,11 @@ export default function Newsletter() {
             onChange={(event) => setEmail(event.target.value)}
             placeholder="YOUR EMAIL ADDRESS"
             aria-label="Your email address"
-            className="peer w-full bg-transparent text-[0.8rem] outline-none placeholder:text-ink lg:text-[0.9938rem] lg:leading-[1.1938rem]"
+            className="peer w-full bg-transparent text-[0.85rem] outline-none placeholder:text-ink max-lg:py-2.5 lg:text-[0.9938rem] lg:leading-[1.1938rem]"
           />
           <button
             type="submit"
-            className="link-underline shrink-0 text-[0.8rem] lg:text-[0.9938rem] lg:leading-[1.1938rem]"
+            className="link-underline shrink-0 text-[0.85rem] max-lg:py-2.5 lg:text-[0.9938rem] lg:leading-[1.1938rem]"
           >
             SIGN UP
           </button>

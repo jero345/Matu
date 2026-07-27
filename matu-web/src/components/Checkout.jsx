@@ -156,7 +156,7 @@ export default function Checkout() {
           <button
             type="button"
             onClick={endCheckout}
-            className="link-underline mt-6 text-[0.8rem] uppercase tracking-[0.2em] lg:mt-[2rem] lg:text-[1.05rem]"
+            className="tap link-underline mt-6 text-[0.8rem] uppercase tracking-[0.2em] lg:mt-[2rem] lg:text-[1.05rem]"
           >
             Back to the shop
           </button>
@@ -445,7 +445,7 @@ function Shell({ children, onClose, closeLabel }) {
           <button
             type="button"
             onClick={onClose}
-            className="link-underline text-[0.72rem] uppercase tracking-[0.18em] lg:text-[1rem]"
+            className="tap link-underline text-[0.72rem] uppercase tracking-[0.18em] lg:text-[1rem]"
           >
             {closeLabel}
           </button>
@@ -462,7 +462,7 @@ function Actions({ next, onNext, back, onBack, disabled }) {
       <button
         type="button"
         onClick={onBack}
-        className="link-underline text-[0.75rem] uppercase tracking-[0.18em] text-ink/70 lg:text-[1rem]"
+        className="tap link-underline text-[0.75rem] uppercase tracking-[0.18em] text-ink/70 lg:text-[1rem]"
       >
         {back}
       </button>

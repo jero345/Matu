@@ -40,7 +40,7 @@ export default function Hero({ ready }) {
         lines={HERO_LINES}
         delay={420}
         step={130}
-        className={`${state} mt-7 max-w-[22ch] text-[2rem] leading-[1.18] text-lime lg:absolute lg:inset-x-0 lg:top-[26.804rem] lg:mt-0 lg:max-w-none lg:text-[3.8813rem] lg:leading-[4.5687rem]`}
+        className={`${state} mt-7 max-w-[22ch] text-[clamp(2rem,4.6vw,3.4rem)] leading-[1.18] text-lime lg:absolute lg:inset-x-0 lg:top-[26.804rem] lg:mt-0 lg:max-w-none lg:text-[3.8813rem] lg:leading-[4.5687rem]`}
       />
 
       <div

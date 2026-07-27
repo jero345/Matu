@@ -87,6 +87,19 @@ html.is-locked body {
   margin-inline: auto;
 }
 
+/* Text-sized controls (Close, Back to the shop, footer nav…) need a finger-sized
+   hit area. Padding would push the sweeping underline off its baseline and shift
+   the artboard spacing, so the target is grown with a pseudo-element instead and
+   the box keeps its measured size. */
+@utility tap {
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    inset: -0.7rem -0.45rem;
+  }
+}
+
 /* Vertical rail labels running up the outer edges of a section */
 @utility rail {
   writing-mode: vertical-rl;

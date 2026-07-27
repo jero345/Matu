@@ -12,7 +12,7 @@ npm run preview
 
 ## Cómo se logró la fidelidad al PDF
 
-El artboard del PDF mide **1920 × 11833 px**. En escritorio (`≥1024px`) el CSS fija
+El artboard del PDF mide **1920 × 11833 px**. En escritorio (`≥1280px`) el CSS fija
 
 ```css
 html { font-size: calc(100vw / 120); }   /* 1rem === 16 px del artboard */
@@ -33,8 +33,41 @@ top_css = bbox_top_pdf − 0.107·font_size − (line_height − 1.2·font_size)
 La página renderizada mide 11837 px de alto contra los 11833 px del PDF, y los bloques de
 texto caen dentro de ±3 px de sus posiciones originales.
 
-Debajo de `1024px` el layout pasa a una versión apilada y fluida (mobile-first), con menú
-hamburguesa en la cabecera.
+## Responsive
+
+Hay **dos composiciones**, no un continuo:
+
+| rango | composición |
+| --- | --- |
+| `≥1280px` | el artboard: posiciones absolutas en rem sobre el lienzo de 1920 |
+| `<1280px` | apilada y fluida (mobile-first), con menú hamburguesa |
+
+El corte está en **1280px y no en 1024** porque el lienzo escala con el viewport: a 1024px
+el `rem` raíz cae a 8,5px y la microtipografía del propio diseño (rieles verticales,
+etiquetas de producto, texto dentro de los anillos — 14-17px sobre el artboard) aterrizaba
+en 7-9px, ilegible. A 1280px lo más chico queda en ~10px y todos los anchos de portátil
+habituales (1280/1366/1440/1536/1920) siguen viendo el diseño previsto. El breakpoint vive
+en `--breakpoint-lg` (`@theme`, `index.css`), así que `lg:` **es** el artboard.
+
+En el tramo fluido los titulares usan `clamp()` en vez de un tamaño fijo, y los bloques de
+texto llevan un ancho máximo (~46rem) para no estirarse a 95 caracteres por línea en tablet.
+
+Dos piezas se resuelven aparte:
+
+- **Los anillos de beneficios** (`HealthBenefits`) miden su contenido con *container
+  queries* (`cqw`) contra el propio anillo, usando las proporciones del artboard
+  (24/276 y 14/276 del diámetro). Así la composición interna es idéntica a cualquier
+  diámetro, en vez de depender del `rem` raíz.
+- **La grilla de especies** revela el dato al pasar el mouse *y* al tocar, porque en
+  pantalla táctil el `hover` no existe y el dato quedaba inalcanzable.
+
+`--sbw` (medido en `main.jsx`) descuenta el ancho de la barra de scroll clásica: `100vw` la
+cuenta pero la caja de contenido no, y sin ese ajuste el lienzo se maqueta ~15px más ancho
+del espacio real y recorta el riel derecho.
+
+Los controles de tamaño de texto (`Close`, nav del pie, puntos del carrusel) agrandan su
+área táctil con la utilidad `tap` —un pseudo-elemento— para no mover la maqueta medida ni
+desplazar el subrayado animado.
 
 ## Tipografía
 

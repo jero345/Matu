@@ -10,7 +10,7 @@ export default function CartButton({ className = '' }) {
       type="button"
       onClick={openCart}
       aria-label={count ? `Bag, ${count} items` : 'Bag, empty'}
-      className={`pointer-events-auto relative block text-lime transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.08] ${className}`}
+      className={`pointer-events-auto relative block text-lime transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.08] max-lg:-m-2 max-lg:p-2 ${className}`}
     >
       <svg
         viewBox="0 0 24 24"

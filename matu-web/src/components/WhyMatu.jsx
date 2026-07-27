@@ -47,10 +47,10 @@ export default function WhyMatu() {
           as="h2"
           lines={HEAD}
           delay={120}
-          className="mt-3 text-[2.35rem] leading-[1.02] text-cream lg:absolute lg:left-[11.5rem] lg:top-[12.0508rem] lg:mt-0 lg:text-[6.5875rem] lg:leading-[6.7062rem] lg:tracking-[-0.047em]"
+          className="mt-3 text-[clamp(2.35rem,5.8vw,4.6rem)] leading-[1.02] text-cream lg:absolute lg:left-[11.5rem] lg:top-[12.0508rem] lg:mt-0 lg:text-[6.5875rem] lg:leading-[6.7062rem] lg:tracking-[-0.047em]"
         />
 
-        <div className="mt-8 space-y-6 text-[1.05rem] leading-[1.35] text-lime lg:mt-0 lg:space-y-0 lg:text-[2.0375rem] lg:leading-[2.375rem]">
+        <div className="mt-8 max-w-[46rem] space-y-6 text-[clamp(1.05rem,1.9vw,1.35rem)] leading-[1.45] text-lime lg:mt-0 lg:max-w-none lg:space-y-0 lg:text-[2.0375rem] lg:leading-[2.375rem]">
           <SplitLines
             as="p"
             lines={P1}

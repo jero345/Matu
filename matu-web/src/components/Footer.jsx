@@ -53,7 +53,7 @@ export default function Footer() {
             href={item.href}
             data-reveal="up"
             style={{ '--d': `${i * 80}ms` }}
-            className="link-underline text-[1.05rem] text-lime lg:text-[1.9625rem] lg:leading-[2.3563rem]"
+            className="tap link-underline text-[1.05rem] text-lime lg:text-[1.9625rem] lg:leading-[2.3563rem]"
           >
             {item.label}
           </a>
@@ -70,7 +70,7 @@ export default function Footer() {
           alt="MATU"
           className="w-[9rem] lg:w-[16.6875rem] lg:max-w-none"
         />
-        <p className="mt-3 text-center font-geo text-[0.55rem] uppercase leading-none tracking-[0.32em] text-lime lg:mt-[1.15rem] lg:text-[0.82rem]">
+        <p className="mt-3 text-center font-geo text-[0.62rem] uppercase leading-none tracking-[0.32em] text-lime lg:mt-[1.15rem] lg:text-[0.82rem]">
           <span className="mr-[0.7em]">•••</span>
           Protect the wild
           <span className="ml-[0.7em]">•••</span>
