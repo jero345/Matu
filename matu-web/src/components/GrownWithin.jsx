@@ -22,10 +22,15 @@ export default function GrownWithin() {
         className="text-center text-[clamp(2.6rem,7.2vw,6rem)] leading-[1.02] tracking-[0.023em] lg:absolute lg:inset-x-0 lg:top-[7.2rem] lg:text-[6.7rem] lg:leading-[6.67rem]"
       />
 
-      <Star
-        className="spin-slow mx-auto mt-8 block size-[2rem] lg:absolute lg:left-[57.3125rem] lg:top-[44.19rem] lg:mx-0 lg:mt-0 lg:size-[4.25rem]"
-        color="var(--color-ink)"
-      />
+      {/* `Star` is an inline-block, so `mx-auto` never centred it — it needs the
+          text-align of a wrapper. The wrapper stays static, so the artboard
+          coordinates below still resolve against the section. */}
+      <div className="mt-8 text-center lg:mt-0">
+        <Star
+          className="spin-slow size-[2rem] lg:absolute lg:left-[57.3125rem] lg:top-[36.5rem] lg:size-[4.25rem]"
+          color="var(--color-ink)"
+        />
+      </div>
 
       {/* column rules grow down from the star */}
       <span

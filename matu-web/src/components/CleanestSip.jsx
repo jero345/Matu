@@ -24,7 +24,7 @@ export default function CleanestSip() {
         as="h2"
         lines={HEAD}
         step={125}
-        className="relative z-10 max-w-[9ch] text-[clamp(3.25rem,7.5vw,6.4rem)] leading-[0.86] text-lime lg:absolute lg:left-[13.7563rem] lg:top-[12.1947rem] lg:max-w-none lg:text-[9rem] lg:leading-[7.6rem] lg:tracking-[-0.002em]"
+        className="relative z-10 mx-auto max-w-[9ch] text-center text-[clamp(3.25rem,7.5vw,6.4rem)] leading-[0.86] text-lime lg:absolute lg:mx-0 lg:max-w-none lg:text-left lg:left-[13.7563rem] lg:top-[12.1947rem] lg:text-[9rem] lg:leading-[7.6rem] lg:tracking-[-0.002em]"
       />
 
       <SplitLines
@@ -32,14 +32,14 @@ export default function CleanestSip() {
         lines={BODY}
         delay={260}
         step={90}
-        className="relative z-10 mt-8 max-w-[34ch] text-[clamp(1.05rem,2vw,1.5rem)] leading-[1.35] text-white lg:absolute lg:left-[14.1563rem] lg:top-[42.1632rem] lg:mt-0 lg:max-w-none lg:text-[2.575rem] lg:leading-[2.6875rem]"
+        className="relative z-10 mx-auto mt-8 max-w-[34ch] text-center text-[clamp(1.05rem,2vw,1.5rem)] leading-[1.35] text-white lg:absolute lg:mx-0 lg:max-w-none lg:text-left lg:left-[14.1563rem] lg:top-[42.1632rem] lg:mt-0 lg:text-[2.575rem] lg:leading-[2.6875rem]"
       />
 
       {/* three nested wrappers on purpose: the scroll parallax, the entrance and
           the idle drift each own a transform and would otherwise fight */}
       <div
         data-parallax="-86"
-        className="parallax relative z-0 mx-auto mt-10 w-[78%] lg:absolute lg:left-[65.32rem] lg:top-[-3.4625rem] lg:mt-0 lg:w-[67.72rem] lg:max-w-none"
+        className="parallax relative z-0 mx-auto mt-10 w-[58%] lg:absolute lg:left-[65.32rem] lg:top-[-3.4625rem] lg:mt-0 lg:w-[67.72rem] lg:max-w-none"
       >
         <div data-reveal="enter-right" style={{ '--d': '240ms' }}>
           <div className="drift-slow">

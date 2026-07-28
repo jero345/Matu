@@ -58,7 +58,7 @@ export default function Shop() {
       <SplitLines
         as="h2"
         lines={['BUILD YOUR RITUAL']}
-        className="text-center text-[clamp(2.5rem,7vw,5.6rem)] leading-none tracking-[0.009em] lg:absolute lg:inset-x-0 lg:top-[3.7183rem] lg:text-[8.4rem]"
+        className="text-center text-[clamp(2.2rem,5.6vw,4.5rem)] leading-none tracking-[0.009em] lg:absolute lg:inset-x-0 lg:top-[3.7183rem] lg:text-[6.7rem]"
       />
 
       <SplitLines

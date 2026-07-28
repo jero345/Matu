@@ -34,7 +34,7 @@ La página renderizada mide 11837 px de alto contra los 11833 px del PDF, y los 
 texto caen dentro de ±3 px de sus posiciones originales.
 
 **Excepción deliberada.** Tres titulares se bajaron un 15% respecto al artboard por pedido
-del cliente: *BUILD YOUR RITUAL* (9.8875 → 8.4rem), *The cleanest sip…* (10.575 → 9rem,
+del cliente: *BUILD YOUR RITUAL* (9.8875 → 6.7rem, en dos pasos), *The cleanest sip…* (10.575 → 9rem,
 interlínea proporcional), *GROWN WITHIN THE FOREST…* (12.2188 → **6.7rem**, en dos pasos) y
 *BENEATH THE CANOPY…* (8.6062 → 6.45rem). Conservan su ancla `top`, así que el resto de
 cada sección no se movió. En el último la
@@ -109,16 +109,22 @@ dos piezas que no estaban en esa carpeta y se exportaron del PDF:
 
 ### Cambio de marca: MATUA → MATU
 
-El render nuevo del envase (`tin-can.webp`, 27-07-2026) trae la marca sin la A final —
-también `MATUS TOOLS` en vez de `MATUA'S TOOLS`. Se actualizaron los dos textos del sitio
-que aún decían MATUA (el `alt` del sello en cruz y el copy de *unsmoked* en `data.js`).
+Los renders nuevos del envase traen la marca sin la A final — también `MATUS TOOLS` en vez
+de `MATUA'S TOOLS`. Se actualizaron los dos textos del sitio que aún decían MATUA (el `alt`
+del sello en cruz y el copy de *unsmoked* en `data.js`).
 
-> **Pendiente.** Estas piezas siguen mostrando **MATUA** y no hay versión nueva de ellas:
-> `box-can.webp` (producto *SET BOX*, wordmark grande y tres menciones en el costado),
-> `tin-can-2.webp` (producto *TIN CAN* y el panel *YOUR RITUAL IS WAITING* del pie) y
-> `cruz-matu.svg`, cuyo *DRINK MATUA* está trazado como contornos —no hay `<text>`—, así
-> que no se puede corregir editando el archivo. Hasta que lleguen los reemplazos, la
-> tienda, el pie y el sello en cruz conviven con la marca vieja.
+Reemplazos hechos, los dos con dimensiones idénticas al archivo viejo, así que entraron sin
+recolocar nada:
+
+| archivo | dónde se ve |
+| --- | --- |
+| `tin-can.webp` (27-07) | la lata grande de *The cleanest sip* |
+| `tin-can-2.webp` (28-07, era `TIN CAN_1.webp`) | producto *TIN CAN* y el panel *YOUR RITUAL IS WAITING* |
+| `fondo3.webp` (28-07, era `FONDO3 (1).webp`) | la plancha con el marco ornamentado de la seccion de la fundadora |
+
+> **Pendiente.** Siguen mostrando **MATUA**: `box-can.webp` (producto *SET BOX*, wordmark
+> grande y tres menciones en el costado) y `cruz-matu.svg`, cuyo *DRINK MATUA* está trazado
+> como contornos —no hay `<text>`—, así que no se puede corregir editando el archivo.
 
 Assets nuevos (27-07-2026):
 
@@ -154,10 +160,14 @@ esquina, pero es sólo un borde de **1px** semitransparente del export, no un re
   cortada a medida para esta banda —3841×1081 contra 1920×544, misma proporción—, así que
   llena sin recortar; sólo se atenúa a `brightness .82`. El input, su filete y el sol
   acompañan en crema.
-- `pegaso.svg` es el caballo alado **extraído de `cruz-matu.svg`**: dentro de esa cruz el
-  pegaso es un único `<path>`, así que se aisló con su propio `viewBox` y `currentColor`.
-  El componente `Pegasus` lo pinta como máscara —igual que `Star`— para poder teñirlo sin
-  mantener un archivo por fondo. Reemplaza al wordmark en el pie.
+- `pegaso.svg` (28-07, era `LOGO CABALLO.svg`) es el caballo alado de línea, y reemplaza al
+  wordmark en el pie. El componente `Pegasus` lo pinta **como máscara** —igual que `Star`—:
+  el archivo trae su propio lima (`#d9df83`), y la máscara lo normaliza al token del sitio
+  para que case con el nav que tiene encima. La máscara usa el canal alfa, así que el
+  interior hueco del trazo se conserva.
+- `favicon.svg` (28-07, era `FAVICON.svg`) — el pegaso sobre cuadro verde. Va en `public/`,
+  declarado en `index.html`; `logo.webp` queda como `alternate icon` porque los favicon en
+  webp no funcionan fuera de Chromium.
 
 > **Pendiente.** El panel *YOUR RITUAL IS WAITING* sigue usando `tin-can-2.webp`, que
 > muestra **MATUA**. Necesita el render rebrandeado.

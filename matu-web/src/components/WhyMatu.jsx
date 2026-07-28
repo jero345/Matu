@@ -67,29 +67,36 @@ export default function WhyMatu() {
       </div>
 
       {/* ---- rainforest plate + circular seal ---- */}
-      <div className="relative bg-cream px-6 pb-16 lg:bg-transparent lg:px-0 lg:pb-0">
-        {/* the plate bleeds off the right half of the band, no inset frame */}
-        <div
-          data-reveal="clip"
-          style={{ '--curtain': 'var(--color-cream)' }}
-          className="relative overflow-hidden rounded-2xl lg:absolute lg:right-0 lg:top-0 lg:h-[67.5rem] lg:w-[60rem] lg:rounded-none"
-        >
+      {/* the plate runs edge to edge on the phone — no padding at all, so the
+          cream wrapper collapses onto the photo and shows no band around it */}
+      <div className="relative bg-cream lg:bg-transparent">
+        {/* On small screens the seal has to hug the photo: pinned to the band it
+            drifted off the top corner and got clipped. `lg:static` hands the
+            desktop coordinates back to the band, where they were measured. */}
+        <div className="relative lg:static">
+          {/* the plate bleeds off the right half of the band, no inset frame */}
+          <div
+            data-reveal="clip"
+            style={{ '--curtain': 'var(--color-cream)' }}
+            className="relative overflow-hidden lg:absolute lg:right-0 lg:top-0 lg:h-[67.5rem] lg:w-[60rem]"
+          >
+            <img
+              src="/img/selva.webp"
+              alt="Sunlight breaking through the palms of the Atlantic Rainforest"
+              loading="lazy"
+              className="clip-zoom size-full object-cover"
+            />
+          </div>
+          {/* Centred on the plate: it spans 60-120rem across and the full 67.5rem
+              band, so the seal (square, 22rem) sits at 79 / 22.9rem. It reads white
+              over the photo — the artwork is dark, so it is knocked out rather than
+              shipped as a second file. */}
           <img
-            src="/img/selva.webp"
-            alt="Sunlight breaking through the palms of the Atlantic Rainforest"
-            loading="lazy"
-            className="clip-zoom size-full object-cover"
+            src="/img/circular-symbol.webp"
+            alt="Cleanest sip from soil to straw"
+            className="spin-slow absolute left-1/2 top-1/2 w-[9rem] -translate-x-1/2 -translate-y-1/2 brightness-0 invert lg:left-[79rem] lg:top-[22.9rem] lg:w-[22rem] lg:max-w-none lg:translate-x-0 lg:translate-y-0"
           />
         </div>
-        {/* Centred on the plate: it spans 60-120rem across and the full 67.5rem
-            band, so the seal (square, 22rem) sits at 79 / 22.9rem. It reads white
-            over the photo — the artwork is dark, so it is knocked out rather than
-            shipped as a second file. */}
-        <img
-          src="/img/circular-symbol.webp"
-          alt="Cleanest sip from soil to straw"
-          className="spin-slow absolute left-6 top-[-1.75rem] w-[5rem] brightness-0 invert lg:left-[79rem] lg:top-[22.9rem] lg:w-[22rem] lg:max-w-none"
-        />
       </div>
     </section>
   )

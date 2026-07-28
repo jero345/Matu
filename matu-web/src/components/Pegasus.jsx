@@ -1,7 +1,7 @@
 /**
- * The MATU winged horse, lifted out of `CRUZ MATU.svg` into `pegaso.svg` so the
- * mark can stand on its own. Drawn as a mask, like `Star`, so it takes any
- * colour instead of shipping one file per background.
+ * The MATU winged horse (`pegaso.svg`, the line-art version of the mark). Drawn
+ * as a mask, like `Star`: the artwork ships with its own lime baked in, and the
+ * mask normalises it to the site token so it matches the nav sitting above it.
  */
 export default function Pegasus({ className = '', color = 'currentColor', label, style }) {
   return (

@@ -76,7 +76,7 @@ export default function HealthBenefits() {
             key={item.title}
             data-reveal="up"
             style={{ '--d': `${i * 130}ms` }}
-            className="group relative aspect-square @container w-full max-w-[19rem] lg:size-[17.25rem] lg:max-w-none"
+            className="group relative aspect-square @container w-full max-w-[15rem] lg:size-[17.25rem] lg:max-w-none"
           >
             <GaugeCircle
               from={item.arc.from}
