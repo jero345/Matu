@@ -133,6 +133,20 @@ Assets nuevos (27-07-2026):
 
 `mate-ritual.jpg` y `fondo5.webp` quedan sin uso.
 
+### Esquinas redondeadas dentro de los archivos
+
+`horse1.webp` y `horse2.webp` (el carrusel de gauchos) vienen con **las esquinas
+redondeadas incrustadas**: un arco de 57px de alfa 0 sobre 1581px de ancho. Ninguna regla
+CSS lo deshace —quitar `rounded-*` deja el contenedor recto pero la imagen sigue con sus
+esquinas transparentes y se ve el fondo a través—. La solución es agrandar la imagen un 8%
+y recentrarla (`left-[-4%] top-[-4%] size-[108%]`), que empuja esas esquinas fuera de la
+caja de recorte. Si algún día llegan los originales sin el redondeo, se puede revertir a
+`inset-0 size-full`.
+
+Ojo al auditar: `yerba-mate.webp`, `selva.webp` y `join.webp` también dan alfa < 255 en la
+esquina, pero es sólo un borde de **1px** semitransparente del export, no un redondeo.
+`tin-can.webp` y `box-can.webp` dan alfa 0 porque son recortes sobre fondo transparente.
+
 ### Newsletter y pie
 
 - La banda del newsletter corre sobre `join.webp` (selva con neblina y pájaros), con la

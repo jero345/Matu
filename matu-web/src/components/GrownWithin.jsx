@@ -19,7 +19,7 @@ export default function GrownWithin() {
         as="h2"
         lines={HEAD}
         step={130}
-        className="text-center text-[clamp(2.6rem,7.2vw,6rem)] leading-[1.02] tracking-[0.023em] lg:absolute lg:inset-x-0 lg:top-[4.4082rem] lg:text-[6.7rem] lg:leading-[6.67rem]"
+        className="text-center text-[clamp(2.6rem,7.2vw,6rem)] leading-[1.02] tracking-[0.023em] lg:absolute lg:inset-x-0 lg:top-[7.2rem] lg:text-[6.7rem] lg:leading-[6.67rem]"
       />
 
       <Star

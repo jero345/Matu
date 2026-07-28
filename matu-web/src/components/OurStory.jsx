@@ -126,7 +126,11 @@ export default function OurStory() {
               key={item.src}
               src={item.src}
               alt={item.alt}
-              className={`clip-zoom absolute inset-0 size-full object-cover transition-opacity duration-[900ms] ${
+              /* horse1/horse2 ship with the rounded corners baked in — a 57px
+                 arc over 1581px of transparency — so no CSS radius can undo it.
+                 The image is blown up 8% and re-centred instead, which pushes
+                 those transparent corners outside the clipping box. */
+              className={`clip-zoom absolute left-[-4%] top-[-4%] size-[108%] max-w-none object-cover transition-opacity duration-[900ms] ${
                 i === slide ? 'opacity-100' : 'opacity-0'
               }`}
             />
