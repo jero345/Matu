@@ -90,7 +90,7 @@ export default function OurStory() {
         <div
           data-reveal="clip"
           style={{ '--curtain': 'var(--color-cream)' }}
-          className="relative overflow-hidden rounded-2xl lg:h-[37.0625rem] lg:rounded-[1.25rem]"
+          className="relative overflow-hidden lg:h-[37.0625rem]"
         >
           <img
             src="/img/yerba-mate.webp"
@@ -119,7 +119,7 @@ export default function OurStory() {
         <div
           data-reveal="clip"
           style={{ '--curtain': 'var(--color-cream)' }}
-          className="relative h-[70vw] overflow-hidden rounded-2xl lg:h-full lg:rounded-[1.5rem]"
+          className="relative h-[70vw] overflow-hidden lg:h-full"
         >
           {SLIDES.map((item, i) => (
             <img
