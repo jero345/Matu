@@ -24,7 +24,7 @@ export default function CleanestSip() {
         as="h2"
         lines={HEAD}
         step={125}
-        className="relative z-10 max-w-[9ch] text-[clamp(3.25rem,9vw,7.5rem)] leading-[0.86] text-lime lg:absolute lg:left-[13.7563rem] lg:top-[12.1947rem] lg:max-w-none lg:text-[10.575rem] lg:leading-[8.925rem] lg:tracking-[-0.002em]"
+        className="relative z-10 max-w-[9ch] text-[clamp(3.25rem,7.5vw,6.4rem)] leading-[0.86] text-lime lg:absolute lg:left-[13.7563rem] lg:top-[12.1947rem] lg:max-w-none lg:text-[9rem] lg:leading-[7.6rem] lg:tracking-[-0.002em]"
       />
 
       <SplitLines

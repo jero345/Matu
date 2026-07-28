@@ -93,8 +93,8 @@ export default function OurStory() {
           className="relative overflow-hidden rounded-2xl lg:h-[37.0625rem] lg:rounded-[1.25rem]"
         >
           <img
-            src="/img/mate-ritual.jpg"
-            alt="A hand holding a mate gourd on horseback"
+            src="/img/yerba-mate.webp"
+            alt="Yerba mate leaves on the branch"
             className="clip-zoom size-full object-cover"
           />
         </div>
@@ -103,7 +103,7 @@ export default function OurStory() {
           style={{ '--d': '360ms' }}
           className="mt-3 text-right font-note text-[0.8rem] italic lg:absolute lg:right-0 lg:top-[37.5578rem] lg:mt-0 lg:text-[1.5688rem] lg:leading-[1.8813rem]"
         >
-          Traditional mate ritual
+          Ilex paraguariensis
         </figcaption>
       </figure>
 

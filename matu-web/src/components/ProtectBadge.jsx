@@ -7,7 +7,7 @@ export default function ProtectBadge({ className = '' }) {
   return (
     <img
       src="/img/cruz-matu.svg"
-      alt="Est. 2025 — Protect the wild, drink MATUA"
+      alt="Est. 2025 — Protect the wild, drink MATU"
       className={`w-[16rem] lg:w-[33.4375rem] lg:max-w-none ${className}`}
     />
   )

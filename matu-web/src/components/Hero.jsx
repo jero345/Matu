@@ -71,7 +71,7 @@ export default function Hero({ ready }) {
         data-reveal="fade"
         style={{ '--d': '1400ms' }}
       >
-        <span className="font-geo text-[0.72rem] uppercase tracking-[0.3em]">Scroll</span>
+        <span className="font-geo text-[max(0.72rem,10px)] uppercase tracking-[0.3em]">Scroll</span>
         <span className="relative block h-[3.2rem] w-px overflow-hidden bg-lime/25">
           <span className="absolute inset-x-0 top-0 block h-1/2 animate-[matu-scroll-hint_2.4s_ease-in-out_infinite] bg-lime" />
         </span>

@@ -1,4 +1,5 @@
 import Star from './Star'
+import Pegasus from './Pegasus'
 import SplitLines from './SplitLines'
 import { NAV } from '../data'
 
@@ -65,16 +66,11 @@ export default function Footer() {
         style={{ '--d': '180ms' }}
         className="mt-12 lg:absolute lg:left-[16.25rem] lg:top-[11.125rem] lg:mt-0"
       >
-        <img
-          src="/img/logo.webp"
-          alt="MATU"
-          className="w-[9rem] lg:w-[16.6875rem] lg:max-w-none"
+        <Pegasus
+          label="MATU"
+          color="var(--color-lime)"
+          className="h-[5rem] w-[5.25rem] lg:h-[9.5rem] lg:w-[10rem]"
         />
-        <p className="mt-3 text-center font-geo text-[0.62rem] uppercase leading-none tracking-[0.32em] text-lime lg:mt-[1.15rem] lg:text-[0.82rem]">
-          <span className="mr-[0.7em]">•••</span>
-          Protect the wild
-          <span className="ml-[0.7em]">•••</span>
-        </p>
       </div>
     </footer>
   )

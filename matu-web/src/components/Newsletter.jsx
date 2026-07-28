@@ -21,11 +21,13 @@ export default function Newsletter() {
   }
 
   return (
-    <section className="relative isolate w-full overflow-hidden bg-cream px-6 py-16 text-ink lg:h-[34rem] lg:px-0 lg:py-0">
+    <section className="relative isolate w-full overflow-hidden bg-ink px-6 py-16 text-cream lg:h-[34rem] lg:px-0 lg:py-0">
+      {/* the plate is cut for this band (3841x1081 against 1920x544), so it fills
+          it without cropping; the type is knocked out in cream over it */}
       <img
-        src="/img/fondo5.webp"
+        src="/img/join.webp"
         alt=""
-        className="absolute inset-0 -z-10 size-full object-cover"
+        className="absolute inset-0 -z-10 size-full object-cover brightness-[0.82]"
       />
 
       <p
@@ -45,7 +47,7 @@ export default function Newsletter() {
 
       <Star
         className="spin-slow mt-10 block size-[1.2rem] lg:absolute lg:left-[62.75rem] lg:top-[8.8125rem] lg:mt-0 lg:size-[2.125rem]"
-        color="var(--color-ink)"
+        color="var(--color-cream)"
       />
 
       <SplitLines
@@ -69,7 +71,7 @@ export default function Newsletter() {
             onChange={(event) => setEmail(event.target.value)}
             placeholder="YOUR EMAIL ADDRESS"
             aria-label="Your email address"
-            className="peer w-full bg-transparent text-[0.85rem] outline-none placeholder:text-ink max-lg:py-2.5 lg:text-[0.9938rem] lg:leading-[1.1938rem]"
+            className="peer w-full bg-transparent text-[0.85rem] outline-none text-cream placeholder:text-cream/75 max-lg:py-2.5 lg:text-[0.9938rem] lg:leading-[1.1938rem]"
           />
           <button
             type="submit"
@@ -77,8 +79,8 @@ export default function Newsletter() {
           >
             SIGN UP
           </button>
-          <span className="absolute inset-x-0 bottom-0 h-px bg-ink/70" />
-          <span className="absolute inset-x-0 bottom-0 h-px origin-left scale-x-0 bg-ink transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] peer-focus:scale-x-100 group-hover/form:scale-x-100" />
+          <span className="absolute inset-x-0 bottom-0 h-px bg-cream/60" />
+          <span className="absolute inset-x-0 bottom-0 h-px origin-left scale-x-0 bg-cream transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] peer-focus:scale-x-100 group-hover/form:scale-x-100" />
         </div>
         <p className="mt-3 text-[0.8rem] transition-opacity duration-500 lg:absolute lg:left-0 lg:top-[2.8557rem] lg:mt-0 lg:text-[1.075rem] lg:leading-[1.2875rem]">
           {sent ? 'Thank you — welcome to the ritual.' : 'No spam — just what protects the wild.'}

@@ -34,7 +34,7 @@ export default function CartButton({ className = '' }) {
 
       <span
         aria-hidden="true"
-        className={`absolute -right-[0.45rem] -top-[0.35rem] grid min-w-[1.05rem] place-items-center rounded-full bg-lime px-1 font-geo text-[0.6rem] leading-[1.05rem] tabular-nums text-ink transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] lg:-right-[0.7rem] lg:-top-[0.5rem] lg:min-w-[1.5rem] lg:px-[0.25rem] lg:text-[0.85rem] lg:leading-[1.5rem] ${
+        className={`absolute -right-[0.45rem] -top-[0.35rem] grid min-w-[1.05rem] place-items-center rounded-full bg-lime px-1 font-geo text-[0.6rem] leading-[1.05rem] tabular-nums text-ink transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] lg:-right-[0.7rem] lg:-top-[0.5rem] lg:min-w-[max(1.5rem,15px)] lg:px-[0.25rem] lg:text-[max(0.85rem,10px)] lg:leading-[max(1.5rem,15px)] ${
           count ? 'scale-100 opacity-100' : 'scale-50 opacity-0'
         }`}
       >

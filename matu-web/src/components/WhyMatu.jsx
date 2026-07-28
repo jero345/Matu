@@ -66,24 +66,29 @@ export default function WhyMatu() {
         </div>
       </div>
 
-      {/* ---- pampas photo + circular seal ---- */}
+      {/* ---- rainforest plate + circular seal ---- */}
       <div className="relative bg-cream px-6 pb-16 lg:bg-transparent lg:px-0 lg:pb-0">
+        {/* the plate bleeds off the right half of the band, no inset frame */}
         <div
           data-reveal="clip"
           style={{ '--curtain': 'var(--color-cream)' }}
-          className="relative overflow-hidden rounded-2xl lg:absolute lg:left-[66.75rem] lg:top-[10.4375rem] lg:h-[50.9375rem] lg:w-[49.375rem] lg:rounded-[1.5rem]"
+          className="relative overflow-hidden rounded-2xl lg:absolute lg:right-0 lg:top-0 lg:h-[67.5rem] lg:w-[60rem] lg:rounded-none"
         >
           <img
-            src="/img/horse1.webp"
-            alt="Gaucho leading two horses through the pampas"
+            src="/img/selva.webp"
+            alt="Sunlight breaking through the palms of the Atlantic Rainforest"
             loading="lazy"
             className="clip-zoom size-full object-cover"
           />
         </div>
+        {/* Centred on the plate: it spans 60-120rem across and the full 67.5rem
+            band, so the seal (square, 22rem) sits at 79 / 22.9rem. It reads white
+            over the photo — the artwork is dark, so it is knocked out rather than
+            shipped as a second file. */}
         <img
           src="/img/circular-symbol.webp"
           alt="Cleanest sip from soil to straw"
-          className="spin-slow absolute left-6 top-[-1.75rem] w-[5rem] lg:left-[65rem] lg:top-[4.0625rem] lg:w-[16.625rem] lg:max-w-none"
+          className="spin-slow absolute left-6 top-[-1.75rem] w-[5rem] brightness-0 invert lg:left-[79rem] lg:top-[22.9rem] lg:w-[22rem] lg:max-w-none"
         />
       </div>
     </section>

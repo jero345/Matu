@@ -16,7 +16,10 @@ export default function Rail({
     <div
       aria-hidden="true"
       className="pointer-events-none absolute inset-y-0 z-10 hidden select-none flex-col items-center justify-center gap-[1.4rem] overflow-hidden lg:flex"
-      style={{ [side]: offset, color, fontSize: size }}
+      /* The rail is 13-17px on the artboard, which scales down to 7-9px on a
+         1024px laptop. The floor is inert at full size and only bites on the
+         narrow desktops where the label would stop being readable. */
+      style={{ [side]: offset, color, fontSize: `max(${size}, 11px)` }}
     >
       {items.map((word, i) => (
         <div key={i} className="flex flex-col items-center gap-[1.4rem]">

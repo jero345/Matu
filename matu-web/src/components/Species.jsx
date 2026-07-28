@@ -28,7 +28,7 @@ export default function Species() {
         as="h2"
         lines={HEAD}
         step={125}
-        className="mt-8 text-center text-[clamp(2.4rem,6vw,4.6rem)] leading-[1.02] tracking-[-0.029em] text-lime lg:absolute lg:left-0 lg:top-[22.2929rem] lg:mt-0 lg:w-[61.3125rem] lg:text-[8.6062rem] lg:leading-[8.7625rem]"
+        className="mt-8 text-center text-[clamp(2.4rem,5.4vw,4.1rem)] leading-[1.02] tracking-[-0.029em] text-lime lg:absolute lg:left-0 lg:top-[22.2929rem] lg:mt-0 lg:w-[61.3125rem] lg:text-[6.45rem] lg:leading-[6.57rem]"
       />
 
       <SplitLines

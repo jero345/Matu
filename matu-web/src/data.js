@@ -150,7 +150,7 @@ export const ALKALOIDS = [
     title: 'NEVER SMOKED',
     lines: [
       'Unlike many carcinogen-laden (PAH) large commercial',
-      'mate brands, MATUA is never dried or smoked by',
+      'mate brands, MATU is never dried or smoked by',
       'chemical means  and is third-party quality tested in',
       'USA labs.',
     ],

@@ -12,7 +12,7 @@ npm run preview
 
 ## Cómo se logró la fidelidad al PDF
 
-El artboard del PDF mide **1920 × 11833 px**. En escritorio (`≥1280px`) el CSS fija
+El artboard del PDF mide **1920 × 11833 px**. En escritorio (`≥1024px`) el CSS fija
 
 ```css
 html { font-size: calc(100vw / 120); }   /* 1rem === 16 px del artboard */
@@ -33,21 +33,34 @@ top_css = bbox_top_pdf − 0.107·font_size − (line_height − 1.2·font_size)
 La página renderizada mide 11837 px de alto contra los 11833 px del PDF, y los bloques de
 texto caen dentro de ±3 px de sus posiciones originales.
 
+**Excepción deliberada.** Tres titulares se bajaron un 15% respecto al artboard por pedido
+del cliente: *BUILD YOUR RITUAL* (9.8875 → 8.4rem), *The cleanest sip…* (10.575 → 9rem,
+interlínea proporcional), *GROWN WITHIN THE FOREST…* (12.2188 → **6.7rem**, en dos pasos) y
+*BENEATH THE CANOPY…* (8.6062 → 6.45rem). Conservan su ancla `top`, así que el resto de
+cada sección no se movió. En el último la
+referencia del cliente se ajustó midiendo el ancho de la línea más larga contra la grilla
+de pilares de abajo: 0.79 del ancho de la grilla en el original, ~0.49 en la referencia. En *The cleanest sip…* también
+bajó el tramo fluido (9vw → 7.5vw) para que en tablet no quedara más grande que en
+escritorio.
+
 ## Responsive
 
 Hay **dos composiciones**, no un continuo:
 
 | rango | composición |
 | --- | --- |
-| `≥1280px` | el artboard: posiciones absolutas en rem sobre el lienzo de 1920 |
-| `<1280px` | apilada y fluida (mobile-first), con menú hamburguesa |
+| `≥1024px` | el artboard: posiciones absolutas en rem sobre el lienzo de 1920 |
+| `<1024px` | apilada y fluida (mobile-first), con menú hamburguesa |
 
-El corte está en **1280px y no en 1024** porque el lienzo escala con el viewport: a 1024px
-el `rem` raíz cae a 8,5px y la microtipografía del propio diseño (rieles verticales,
-etiquetas de producto, texto dentro de los anillos — 14-17px sobre el artboard) aterrizaba
-en 7-9px, ilegible. A 1280px lo más chico queda en ~10px y todos los anchos de portátil
-habituales (1280/1366/1440/1536/1920) siguen viendo el diseño previsto. El breakpoint vive
-en `--breakpoint-lg` (`@theme`, `index.css`), así que `lg:` **es** el artboard.
+El breakpoint vive en `--breakpoint-lg` (`@theme`, `index.css`), así que `lg:` **es** el
+artboard.
+
+> **No subir ese corte.** Se probó llevarlo a 1280px para que la microtipografía no se
+> achicara tanto en portátiles, y fue un error: toda ventana de 1024-1279px —tamaño muy
+> común— pasaba a la maqueta móvil, con menú hamburguesa incluido, en vez del diseño real.
+> El diseño manda. La legibilidad se resuelve con pisos `max()` en las pocas etiquetas que
+> caerían por debajo de ~10px (`Rail.jsx` y las etiquetas de producto en `Shop.jsx`): son
+> inertes a tamaño completo y solo actúan en las pantallas donde harían falta.
 
 En el tramo fluido los titulares usan `clamp()` en vez de un tamaño fijo, y los bloques de
 texto llevan un ancho máximo (~46rem) para no estirarse a 95 caracteres por línea en tablet.
@@ -90,9 +103,50 @@ desplazar el subrayado animado.
 dos piezas que no estaban en esa carpeta y se exportaron del PDF:
 
 - `mate-ritual.jpg` — la foto del mate en el sector *Our Story*.
-- `hero-jungle.webp` — la plancha de selva del hero. `FONDO1.webp` es un recorte más
-  cerrado de la misma foto, así que el hero usa el encuadre original del diseño. El
-  oscurecimiento del hero (`brightness .52`) también replica el del PDF.
+- `hero-jungle.webp` — la plancha de selva del hero (helechos arbóreos). `FONDO1.webp` es
+  un recorte más cerrado de la misma foto, así que el hero usa el encuadre original del
+  diseño. El oscurecimiento (`brightness .52`) también replica el del PDF.
+
+### Cambio de marca: MATUA → MATU
+
+El render nuevo del envase (`tin-can.webp`, 27-07-2026) trae la marca sin la A final —
+también `MATUS TOOLS` en vez de `MATUA'S TOOLS`. Se actualizaron los dos textos del sitio
+que aún decían MATUA (el `alt` del sello en cruz y el copy de *unsmoked* en `data.js`).
+
+> **Pendiente.** Estas piezas siguen mostrando **MATUA** y no hay versión nueva de ellas:
+> `box-can.webp` (producto *SET BOX*, wordmark grande y tres menciones en el costado),
+> `tin-can-2.webp` (producto *TIN CAN* y el panel *YOUR RITUAL IS WAITING* del pie) y
+> `cruz-matu.svg`, cuyo *DRINK MATUA* está trazado como contornos —no hay `<text>`—, así
+> que no se puede corregir editando el archivo. Hasta que lleguen los reemplazos, la
+> tienda, el pie y el sello en cruz conviven con la marca vieja.
+
+Assets nuevos (27-07-2026):
+
+- `selva.webp` — la selva de palmeras con neblina. Va **a sangre en la mitad derecha de
+  *Why Matu*** (`right-0 top-0`, `60rem × 67.5rem`, sin esquinas redondeadas), con el sello
+  circular encima en blanco: el arte es oscuro, así que se calan con `brightness-0 invert`
+  en vez de mantener un segundo archivo.
+- `yerba-mate.webp` — hoja de yerba en primer plano. Es la foto de *Our Story* arriba a la
+  derecha, donde antes iba `mate-ritual.jpg`. Su relación (1581×1186) calza con la caja del
+  artboard, así que entró sin recorte. El pie de foto pasó de *Traditional mate ritual* a
+  *Ilex paraguariensis*, que es lo que muestra la imagen y enlaza con el titular.
+
+`mate-ritual.jpg` y `fondo5.webp` quedan sin uso.
+
+### Newsletter y pie
+
+- La banda del newsletter corre sobre `join.webp` (selva con neblina y pájaros), con la
+  tipografía calada en crema en vez del line-art claro de `fondo5.webp`. La foto viene
+  cortada a medida para esta banda —3841×1081 contra 1920×544, misma proporción—, así que
+  llena sin recortar; sólo se atenúa a `brightness .82`. El input, su filete y el sol
+  acompañan en crema.
+- `pegaso.svg` es el caballo alado **extraído de `cruz-matu.svg`**: dentro de esa cruz el
+  pegaso es un único `<path>`, así que se aisló con su propio `viewBox` y `currentColor`.
+  El componente `Pegasus` lo pinta como máscara —igual que `Star`— para poder teñirlo sin
+  mantener un archivo por fondo. Reemplaza al wordmark en el pie.
+
+> **Pendiente.** El panel *YOUR RITUAL IS WAITING* sigue usando `tin-can-2.webp`, que
+> muestra **MATUA**. Necesita el render rebrandeado.
 
 El sello *PROTECT THE WILD* es `CRUZ MATU.svg` tal cual viene de `recursos/`
 (`cruz-matu.svg`): vector puro, con el hueco crema entre el filete y el cuerpo
