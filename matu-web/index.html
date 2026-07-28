@@ -2,9 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <!-- One icon only. `public/` is served from the root, so the path is
+         /favicon.svg — not ./public/... A second `alternate icon` here made
+         Chromium fall back to the wordmark: it takes the last icon link it
+         finds, and a webp fallback buys nothing since the browsers that would
+         need one do not read webp icons either. -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <!-- webp icons are patchy outside Chromium, so the SVG leads and this is the fallback -->
-    <link rel="alternate icon" type="image/webp" href="/img/logo.webp" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MATU — Protect the Wild · Argentine Yerba Mate</title>
     <meta

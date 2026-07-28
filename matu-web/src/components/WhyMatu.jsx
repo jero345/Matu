@@ -1,7 +1,10 @@
 import Rail from './Rail'
 import SplitLines from './SplitLines'
 
-const HEAD = ['A SACRED SPIRIT', 'OF SHARING AND', 'BELONGING.']
+// Below `lg` the three lines reflow as one run, so the only way to keep "AND
+// BELONGING." together is to glue them with a non-breaking space.
+const NBSP = ' '
+const HEAD = ['A SACRED SPIRIT', 'OF SHARING', `AND${NBSP}BELONGING.`]
 
 const P1 = [
   'In ancient times, when earth and sky came together,',
@@ -35,7 +38,7 @@ export default function WhyMatu() {
         color="var(--color-lime)"
       />
 
-      <div className="relative z-10 px-6 py-16 lg:px-0 lg:py-0">
+      <div className="relative z-10 px-6 py-16 text-center lg:px-0 lg:py-0 lg:text-left">
         <p
           data-reveal="up"
           className="text-[1.05rem] text-lime lg:absolute lg:left-[11.5rem] lg:top-[6.8972rem] lg:text-[2.1875rem] lg:leading-[2.625rem]"
@@ -50,7 +53,7 @@ export default function WhyMatu() {
           className="mt-3 text-[clamp(2.35rem,5.8vw,4.6rem)] leading-[1.02] text-cream lg:absolute lg:left-[11.5rem] lg:top-[12.0508rem] lg:mt-0 lg:text-[6.5875rem] lg:leading-[6.7062rem] lg:tracking-[-0.047em]"
         />
 
-        <div className="mt-8 max-w-[46rem] space-y-6 text-[clamp(1.05rem,1.9vw,1.35rem)] leading-[1.45] text-lime lg:mt-0 lg:max-w-none lg:space-y-0 lg:text-[2.0375rem] lg:leading-[2.375rem]">
+        <div className="mx-auto mt-8 max-w-[46rem] space-y-6 text-[clamp(1.05rem,1.9vw,1.35rem)] leading-[1.45] text-lime lg:mx-0 lg:mt-0 lg:max-w-none lg:space-y-0 lg:text-[2.0375rem] lg:leading-[2.375rem]">
           <SplitLines
             as="p"
             lines={P1}
