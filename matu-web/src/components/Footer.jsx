@@ -30,7 +30,7 @@ export default function Footer() {
               window on its middle band — the wordmark stays, the panel loses the
               height the full frame was costing it */}
           <img
-            src="/img/tin-can-2.webp"
+            src="/img/tin-can-2.webp?v=2"
             alt="MATU yerba mate tins"
             className="size-full object-cover transition-transform duration-[1100ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/cta:-translate-y-[0.9rem] group-hover/cta:scale-[1.03] lg:h-auto lg:w-full lg:object-contain"
           />

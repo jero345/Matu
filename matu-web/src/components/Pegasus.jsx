@@ -12,8 +12,8 @@ export default function Pegasus({ className = '', color = 'currentColor', label,
       className={`inline-block shrink-0 ${className}`}
       style={{
         backgroundColor: color,
-        WebkitMaskImage: 'url(/img/pegaso.svg)',
-        maskImage: 'url(/img/pegaso.svg)',
+        WebkitMaskImage: 'url(/img/pegaso.svg?v=2)',
+        maskImage: 'url(/img/pegaso.svg?v=2)',
         WebkitMaskSize: 'contain',
         maskSize: 'contain',
         WebkitMaskRepeat: 'no-repeat',

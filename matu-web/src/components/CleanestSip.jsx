@@ -45,7 +45,7 @@ export default function CleanestSip() {
           <div className="drift-slow">
             <Product360
               frames={frames('can')}
-              fallback="/img/tin-can.webp"
+              fallback="/img/tin-can.webp?v=2"
               alt="MATU yerba mate tin cans"
               className="w-full"
               imgClassName="w-full"

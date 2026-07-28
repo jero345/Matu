@@ -16,7 +16,7 @@ export const money = (value) =>
 export const PRODUCTS = [
   {
     id: 'matu-1000',
-    image: '/img/box-can.webp',
+    image: '/img/box-can.webp?v=2',
     alt: 'MATU 1.000g yerba mate set box',
     img: { left: '5.7375rem', top: '2.3375rem', width: '14.3625rem' },
     category: 'YERBA MATE',
@@ -26,7 +26,7 @@ export const PRODUCTS = [
   },
   {
     id: 'matu-800',
-    image: '/img/tin-can-2.webp',
+    image: '/img/tin-can-2.webp?v=2',
     alt: 'MATU 800g yerba mate tin can',
     img: { left: '1.675rem', top: '3.3375rem', width: '19.55rem' },
     category: 'YERBA MATE',

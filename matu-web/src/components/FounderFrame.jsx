@@ -17,7 +17,7 @@ export default function FounderFrame() {
   return (
     <section className="relative isolate w-full overflow-hidden bg-ink px-8 py-20 text-center lg:h-[67.5rem] lg:px-0 lg:py-0">
       <img
-        src="/img/fondo3.webp"
+        src="/img/fondo3.webp?v=2"
         alt=""
         className="absolute inset-0 -z-10 size-full scale-[1.9] object-cover lg:scale-100"
       />
