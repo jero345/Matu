@@ -2,11 +2,12 @@ import Star from './Star'
 import Pegasus from './Pegasus'
 
 /**
- * The lime ticker bands. Two identical halves scroll by -50% so the loop is
+ * The ticker bands. Two identical halves scroll by -50% so the loop is
  * seamless; the outer wrapper is skewed by scroll velocity (see useScrollFx).
  *
  * `text` takes a single phrase or a list of them, cycled in order. `mark` picks
- * what separates them — the sunburst, or MATU the pegasus.
+ * what separates them — the sunburst, or MATU the pegasus. `tone` flips the
+ * band: lime with dark type, or the inverse.
  */
 export default function Marquee({
   text,
@@ -15,6 +16,7 @@ export default function Marquee({
   size = '1.5rem',
   duration = '48s',
   mark = 'star',
+  tone = 'lime',
   className = '',
 }) {
   const phrases = Array.isArray(text) ? text : [text]
@@ -25,12 +27,13 @@ export default function Marquee({
   const Mark = mark === 'pegasus' ? Pegasus : Star
   const markClass =
     mark === 'pegasus' ? 'h-[1.9rem] w-[2.03rem] spin-none' : 'size-[2.125rem] spin-slow'
+  const band = tone === 'ink' ? 'bg-ink text-lime' : 'bg-lime text-ink'
 
   const group = (key) => (
     <div key={key} className="flex shrink-0 items-center" style={{ gap }}>
       {run.map((phrase, i) => (
         <div key={i} className="group/item flex shrink-0 items-center" style={{ gap }}>
-          <Mark className={markClass} color="var(--color-ink)" />
+          <Mark className={markClass} />
           <span className="whitespace-pre" style={{ fontSize: size }}>
             {phrase}
           </span>
@@ -41,7 +44,7 @@ export default function Marquee({
 
   return (
     <div
-      className={`relative flex h-[3.5rem] w-full items-center overflow-hidden bg-lime text-ink lg:h-[6rem] ${className}`}
+      className={`relative flex h-[3.5rem] w-full items-center overflow-hidden ${band} lg:h-[6rem] ${className}`}
     >
       <div className="marquee-skew w-full">
         <div

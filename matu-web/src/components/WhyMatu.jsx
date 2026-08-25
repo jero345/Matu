@@ -1,11 +1,6 @@
 import Rail from './Rail'
 import SplitLines from './SplitLines'
 
-// Below `lg` the three lines reflow as one run, so the only way to keep "AND
-// BELONGING." together is to glue them with a non-breaking space.
-const NBSP = ' '
-const HEAD = ['A SACRED SPIRIT', 'OF SHARING', `AND${NBSP}BELONGING.`]
-
 const P1 = [
   'In ancient times, when earth and sky came together,',
   'MATU emerged: a winged horse born from the very',
@@ -37,19 +32,30 @@ export default function WhyMatu() {
       />
 
       <div className="relative z-10 px-6 py-16 text-center lg:px-0 lg:py-0 lg:text-left">
-        <p
-          data-reveal="up"
-          className="text-[1.05rem] text-lime lg:absolute lg:left-[11.5rem] lg:top-[6.8972rem] lg:text-[2.1875rem] lg:leading-[2.625rem]"
-        >
-          WHY MATU
-        </p>
-
         <SplitLines
           as="h2"
-          lines={HEAD}
+          lines={['WHO IS MATU?']}
           delay={120}
-          className="mt-3 text-[clamp(2.35rem,5.8vw,4.6rem)] leading-[1.02] text-cream lg:absolute lg:left-[11.5rem] lg:top-[12.0508rem] lg:mt-0 lg:text-[6.5875rem] lg:leading-[6.7062rem] lg:tracking-[-0.047em]"
+          className="text-[clamp(2.35rem,5.8vw,4.6rem)] leading-[1.02] text-lime lg:absolute lg:left-[11.5rem] lg:top-[12.0508rem] lg:text-[6.5875rem] lg:leading-[6.7062rem] lg:tracking-[-0.047em]"
         />
+
+        {/* the mark sits straight under the headline, filling the space the old
+            three-line title used to take. The wrapper now carries the artboard
+            coordinates and spans the 45rem text column, so the horse centres on
+            the same measure the headline and paragraphs are set to. */}
+        <div
+          data-reveal="up"
+          style={{ '--d': '260ms' }}
+          className="mt-8 lg:absolute lg:left-[11.5rem] lg:top-[20rem] lg:mt-0 lg:w-[45rem] lg:text-center"
+        >
+          {/* the metallic pegasus, not the flat mark: its finish is baked into
+              the file, so it is placed as an image rather than tinted */}
+          <img
+            src="/img/pegaso-metalico.webp"
+            alt="MATU, the winged horse"
+            className="float-slow mx-auto w-[7rem] lg:w-[14rem] lg:max-w-none"
+          />
+        </div>
 
         <div className="mx-auto mt-8 max-w-[46rem] space-y-6 text-[clamp(1.05rem,1.9vw,1.35rem)] leading-[1.45] text-lime lg:mx-0 lg:mt-0 lg:max-w-none lg:space-y-0 lg:text-[2.0375rem] lg:leading-[2.375rem]">
           <SplitLines

@@ -11,6 +11,8 @@ const SLIDES = [
 const HEAD = ['A HOLY HOLLY TREE']
 const BOTANICAL = 'Ilex paraguariensis'
 
+/* Both columns share the same `top` on purpose — the two paragraphs are meant
+   to start on the same baseline, so move them together or not at all. */
 const PARAGRAPHS = [
   {
     pos: 'lg:absolute lg:left-[12.1438rem] lg:top-[51.2rem] lg:w-[48rem]',
@@ -24,7 +26,7 @@ const PARAGRAPHS = [
     ],
   },
   {
-    pos: 'lg:absolute lg:left-[61.3125rem] lg:top-[56.5rem] lg:w-[49.4375rem] lg:text-right',
+    pos: 'lg:absolute lg:left-[61.3125rem] lg:top-[51.2rem] lg:w-[49.4375rem] lg:text-right',
     lines: [
       'That spirit carried forward through the centuries',
       'into the hands of the gauchos, the iconic horsemen',

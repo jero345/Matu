@@ -4,9 +4,8 @@ import SplitLines from './SplitLines'
 
 const HEAD = ['BE THE FIRST', 'TO TASTE THE', 'HARVEST.']
 const SIGNUP = [
-  'Sign up for early access to new drops,',
-  'farm updates from Misiones, and stories',
-  'from the trail.',
+  'Sign up for early access to new drops',
+  'and farm updates from Misiones.',
 ]
 
 export default function Newsletter() {

@@ -12,6 +12,16 @@ function AddToBag({ product }) {
   const { add } = useCart()
   const [added, setAdded] = useState(false)
 
+  // not on sale yet: the slot keeps the button's footprint so the tiles stay
+  // aligned, but there is nothing to press
+  if (product.comingSoon) {
+    return (
+      <span className="mt-auto grid h-11 w-full shrink-0 place-items-center rounded-full border border-ink/40 text-[0.78rem] text-ink/60 lg:absolute lg:inset-x-0 lg:top-[33.2625rem] lg:mt-0 lg:h-[2.85rem] lg:text-[1.35rem]">
+        COMING SOON
+      </span>
+    )
+  }
+
   useEffect(() => {
     if (!added) return
     const t = setTimeout(() => setAdded(false), 1600)

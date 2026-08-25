@@ -59,6 +59,7 @@ export default function App() {
               'PROTECT THE WILD',
             ]}
             mark="pegasus"
+            tone="ink"
             repeat={12}
             gap="3.797rem"
             size="1.7875rem"

@@ -84,7 +84,11 @@ export default function Species() {
               }`}
             >
               <span className="text-[0.8rem] text-lime lg:text-[1.4rem]">
-                {animal.name} <em className="italic opacity-80">{animal.nameEs}</em>
+                {/* Real spaces around the dot, not margins on an aria-hidden span:
+                    that keeps the two names separated for a screen reader too. */}
+                {animal.name}{' '}
+                <span className="mx-[0.1em] opacity-45">·</span>{' '}
+                <em className="italic opacity-80">{animal.nameEs}</em>
               </span>
               <span className="text-[0.7rem] leading-[1.25] text-cream lg:text-[1.1rem] lg:leading-[1.25rem]">
                 {animal.fact}

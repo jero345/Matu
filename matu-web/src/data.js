@@ -36,6 +36,7 @@ export const PRODUCTS = [
   },
   {
     id: 'bombilla',
+    comingSoon: true,
     image: '/img/bombilla.webp',
     alt: 'Stainless steel bombilla filter straw',
     img: { left: '1.6rem', top: '1.125rem', width: '19.125rem' },
@@ -46,6 +47,7 @@ export const PRODUCTS = [
   },
   {
     id: 'french-press',
+    comingSoon: true,
     image: '/img/prensa.webp',
     alt: 'Green glass french press',
     img: { left: '2.63rem', top: '2.2rem', width: '17.894rem' },
@@ -86,29 +88,31 @@ export const HEALTH_CIRCLES = [
   {
     title: 'ENERGY',
     lines: [
-      'Real cellular energy — from vitamins',
-      'A, B1–B5, C and E, plus calcium, iron,',
-      'zinc, magnesium, potassium,',
-      'phosphoros, sulfur, selenium and',
-      'manganese.',
+      'Real cellular energy — from',
+      'vitamins A, B1–B5, C and E,',
+      'plus calcium, iron, zinc,',
+      'magnesium, potassium,',
+      'phosphoros, sulfur, selenium',
+      'and manganese.',
     ],
     arc: { from: 0, sweep: 120 },
   },
   {
     title: 'RECOVERY',
     lines: [
-      '15 amino acids, plus compounds that',
-      'clear lactic acid from muscles after',
-      'effort.',
+      '15 amino acids, plus compounds',
+      'that clear lactic acid from',
+      'muscles after effort.',
     ],
     arc: { from: 120, sweep: 120 },
   },
   {
     title: 'ANTIOXIDANT',
     lines: [
-      '90% more antioxidants than green',
-      'tea — shielding cells from oxidative',
-      'stress, sip after sip.',
+      '90% more antioxidants than',
+      'green tea — shielding cells',
+      'from oxidative stress, sip',
+      'after sip.',
     ],
     arc: { from: 240, sweep: 120 },
   },
@@ -139,17 +143,16 @@ export const ALKALOIDS = [
       'cardiovascular health.',
     ],
   },
-  {
-    number: '04',
-    title: 'UNSMOKED',
-    lines: [
-      'Unlike big commercial brands laden',
-      'with carcinogens (PAHs), MATU is',
-      'never chemically smoked — and it’s',
-      'third-party tested in U.S. labs.',
-    ],
-  },
 ]
+
+/** Runs full width under the sub-headline, not as a numbered call-out. */
+export const UNSMOKED = {
+  title: 'UNSMOKED',
+  lines: [
+    'Unlike big commercial brands laden with carcinogens (PAHs), MATU is never',
+    'chemically smoked — and it’s third-party tested in U.S. labs.',
+  ],
+}
 
 export const FOREST_PILLARS = [
   {
@@ -192,7 +195,7 @@ export const SPECIES = [
     image: '/img/colibri.webp',
     photo: '/img/colibri-foto.webp',
     name: 'Hummingbird',
-    nameEs: 'Picaflor',
+    nameEs: 'Colibrí',
     fact: 'Works the small pale flowers yerba mate opens at the start of spring.',
   },
   {
