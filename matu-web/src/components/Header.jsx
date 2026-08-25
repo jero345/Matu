@@ -7,7 +7,7 @@ export default function Header() {
 
   return (
     <header className="pointer-events-none fixed inset-x-0 top-0 z-40 transition-[background-color,backdrop-filter] duration-500 [html.is-scrolled_&]:pointer-events-auto [html.is-scrolled_&]:bg-ink/85 [html.is-scrolled_&]:backdrop-blur-md">
-      <div className="page relative flex items-center justify-between px-6 pt-6 transition-[padding] duration-500 lg:items-start lg:justify-center lg:px-0 lg:pt-[2.875rem] lg:[html.is-scrolled_&]:pt-[1.1rem] lg:[html.is-scrolled_&]:pb-[0.9rem]">
+      <div className="page relative flex items-center justify-between px-5 pt-5 pb-4 transition-[padding] duration-500 lg:items-start lg:justify-center lg:px-0 lg:pb-0 lg:pt-[2.875rem] lg:[html.is-scrolled_&]:pt-[1.1rem] lg:[html.is-scrolled_&]:pb-[0.9rem]">
         {/* mobile menu toggle */}
         <button
           type="button"
@@ -52,12 +52,12 @@ export default function Header() {
           <img
             src="/img/sello-logo.webp"
             alt="MATU — Misiones, Argentina · Yerba mate · Protect the wild"
-            className="w-[4.5rem] lg:w-[9rem] [html.is-scrolled_&]:hidden"
+            className="w-[4rem] lg:w-[9rem] [html.is-scrolled_&]:hidden"
           />
           <img
             src="/img/logo.webp"
             alt="MATU"
-            className="hidden w-[7.5rem] origin-top transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] lg:w-[12.375rem] lg:[html.is-scrolled_&]:scale-[0.74] [html.is-scrolled_&]:block"
+            className="hidden w-[5.5rem] origin-top transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] lg:w-[12.375rem] lg:[html.is-scrolled_&]:scale-[0.74] [html.is-scrolled_&]:block"
           />
         </a>
 
