@@ -2,14 +2,14 @@ import Star from './Star'
 import SplitLines from './SplitLines'
 
 const P1 = [
-  'Our founder didn’t source yerba mate from a catalog or a supplier’s spreadsheet she traveled to',
-  'Argentina, walked the land, and conducted a personal audit of the agroforestry farm where our',
-  'yerba mate is grown. It wasn’t just due diligence. It was a pilgrimage.',
+  'Our founder didn’t source yerba mate from a catalog or a supplier’s spreadsheet. She traveled to',
+  'Argentina, walked the land, and conducted a personal audit of the Agroforestry farm where our',
+  'yerba mate is grown. It wasn’t due diligence — it was purpose.',
 ]
 
 const P2 = [
-  'On a mission to create the Cleanest Sip from Soil to Straw MATU is hand harvested, unsmoked,',
-  'and regeneratively grown by a a 27 year legacy of 118 united farmers in the Atlantic Rainforest',
+  'On a mission to create the Cleanest Sip from Soil to Straw, MATU is hand harvested, unsmoked,',
+  'and regeneratively grown by a 27 year legacy of 118 united farmers in the Atlantic Rainforest',
   'region of Argentina.',
 ]
 

@@ -84,75 +84,69 @@ export const PAYMENT_METHODS = [
 /* `arc` is the start angle / sweep of the heavier segment on each gauge. */
 export const HEALTH_CIRCLES = [
   {
-    title: 'ENERGIZER',
+    title: 'ENERGY',
     lines: [
-      'Feeds cells real energy. Rich in',
-      'vitamins A, B1, B2, B3, B5, C and E,',
-      'plus calcium, manganese, iron,',
-      'phosphorous, zinc, sulfur, selenium,',
-      'magnesium and potassium.',
+      'Real cellular energy — from vitamins',
+      'A, B1–B5, C and E, plus calcium, iron,',
+      'zinc, magnesium, potassium,',
+      'phosphoros, sulfur, selenium and',
+      'manganese.',
     ],
-    arc: { from: 108, sweep: 96 },
+    arc: { from: 0, sweep: 120 },
   },
   {
     title: 'RECOVERY',
     lines: [
-      'Contains 15 amino acids, plus',
-      'compounds that reduce lactic acid',
-      'accumulation in muscles after effort.',
+      '15 amino acids, plus compounds that',
+      'clear lactic acid from muscles after',
+      'effort.',
     ],
-    arc: { from: 288, sweep: 84 },
+    arc: { from: 120, sweep: 120 },
   },
   {
-    title: 'ANTIOXIDANTS',
+    title: 'ANTIOXIDANT',
     lines: [
-      '90% more antioxidants than your',
-      'average green tea protecting cells',
-      'from oxidative stress, sip after sip.',
+      '90% more antioxidants than green',
+      'tea — shielding cells from oxidative',
+      'stress, sip after sip.',
     ],
-    arc: { from: 140, sweep: 92 },
-  },
-  {
-    title: 'PSYCHOACTIVE',
-    lines: [
-      'Rich in the alkaloids caffeine,',
-      'theobromine and theophylline',
-      'increasing cognitive function and',
-      'steady energy.',
-    ],
-    arc: { from: 282, sweep: 84 },
+    arc: { from: 240, sweep: 120 },
   },
 ]
 
 export const ALKALOIDS = [
   {
     number: '01',
-    title: 'THEOBROMINE',
-    lines: [
-      'The same alkaloid found in chocolate a gentle stimulant',
-      'that boosts endorphins and cognitive function, and',
-      'protects teeth more effectively against cavities than',
-      'fluoride.',
-    ],
+    title: 'CAFFEINE',
+    lines: ['For sharper focus and steady energy.'],
   },
   {
     number: '02',
-    title: 'THEOPHYLLINE',
+    title: 'THEOBROMINE',
     lines: [
-      'A natural bronchodilator: it relaxes pulmonary blood',
-      'vessels and the smooth muscle along bronchial airways,',
-      'opening the passage of air and benefiting cardiovascular',
-      'health.',
+      'The gentle stimulant found in',
+      'chocolate. Boosts endorphins and',
+      'focus — and guards teeth against',
+      'cavities better than fluoride.',
     ],
   },
   {
     number: '03',
-    title: 'NEVER SMOKED',
+    title: 'THEOPHYLLINE',
     lines: [
-      'Unlike many carcinogen-laden (PAH) large commercial',
-      'mate brands, MATU is never dried or smoked by',
-      'chemical means  and is third-party quality tested in',
-      'USA labs.',
+      'A natural bronchodilator — it opens',
+      'the airways and supports',
+      'cardiovascular health.',
+    ],
+  },
+  {
+    number: '04',
+    title: 'UNSMOKED',
+    lines: [
+      'Unlike big commercial brands laden',
+      'with carcinogens (PAHs), MATU is',
+      'never chemically smoked — and it’s',
+      'third-party tested in U.S. labs.',
     ],
   },
 ]
@@ -161,17 +155,17 @@ export const FOREST_PILLARS = [
   {
     title: 'SOIL AS A CARBON SPONGE',
     lines: [
-      'Soil as a carbon sponge Dense vegetation stores',
-      'carbon in trees, roots and soil while leaf litter',
-      'continually returns nutrients to the ground.',
+      'Dense vegetation stores carbon in trees, roots',
+      'and soil while leaf litter continually returns',
+      'nutrients to the ground.',
     ],
   },
   {
     title: 'HABITAT THAT STAYS STANDING',
     lines: [
-      'Habitat that stays standing Agroforestry supports',
-      'biodiversity, retains water and produces a resilient',
-      'crop without replacing the forest.',
+      'Agroforestry supports biodiversity, retains water',
+      'and produces a resilient crop without replacing',
+      'the forest.',
     ],
   },
   {
@@ -184,50 +178,70 @@ export const FOREST_PILLARS = [
   },
 ]
 
+/* `nameEs` is set in italics next to the English name. Where the Spanish name
+   used to open the fact, it was lifted out so it is not said twice. */
 export const SPECIES = [
   {
     image: '/img/mariposa.webp',
+    photo: '/img/mariposa-foto.webp',
     name: 'Butterflies',
+    nameEs: 'Mariposas',
     fact: 'Pollinators of the understory. Their numbers fall the moment a canopy is cleared.',
   },
   {
     image: '/img/colibri.webp',
+    photo: '/img/colibri-foto.webp',
     name: 'Hummingbird',
-    fact: 'Picaflor. Works the small pale flowers yerba mate opens at the start of spring.',
+    nameEs: 'Picaflor',
+    fact: 'Works the small pale flowers yerba mate opens at the start of spring.',
   },
   {
     image: '/img/mantis.webp',
+    photo: '/img/mantis-foto.webp',
     name: 'Praying mantis',
+    nameEs: 'Mantis religiosa',
     fact: 'Pest control with no chemistry attached — one reason our farm never sprays.',
   },
   {
     image: '/img/pantera.webp',
+    photo: '/img/pantera-foto.webp',
     name: 'Jaguar',
-    fact: 'Yaguareté. Barely 300 remain in the Atlantic Forest; shade-grown mate keeps their corridors open.',
+    nameEs: 'Yaguareté',
+    fact: 'Barely 300 remain in the Atlantic Forest; shade-grown mate keeps their corridors open.',
   },
   {
     image: '/img/coati.webp',
+    photo: '/img/coati-foto.webp',
     name: 'Coati',
+    nameEs: 'Coatí',
     fact: 'Ground-level seed disperser, endlessly curious around the harvest trails.',
   },
   {
     image: '/img/tucan.webp',
+    photo: '/img/tucan-foto.webp',
     name: 'Toucan',
+    nameEs: 'Tucán',
     fact: 'Carries forest seeds kilometres away from the tree that grew them.',
   },
   {
     image: '/img/cocodrilo.webp',
-    name: 'Yacaré',
+    photo: '/img/cocodrilo-foto.webp',
+    name: 'Broad-snouted caiman',
+    nameEs: 'Yacaré',
     fact: 'Guards the slow streams that feed the Paraná basin all year round.',
   },
   {
     image: '/img/tapir.webp',
+    photo: '/img/tapir-foto.webp',
     name: 'Tapir',
-    fact: "Anta. South America's largest land mammal, and the forest's most patient gardener.",
+    nameEs: 'Anta',
+    fact: "South America's largest land mammal, and the forest's most patient gardener.",
   },
   {
     image: '/img/mono.webp',
+    photo: '/img/mono-foto.webp',
     name: 'Capuchin monkey',
+    nameEs: 'Mono caí',
     fact: 'Travels the continuous canopy that agroforestry, and only agroforestry, leaves standing.',
   },
 ]

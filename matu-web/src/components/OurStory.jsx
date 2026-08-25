@@ -8,43 +8,31 @@ const SLIDES = [
   { src: '/img/horse1.webp', alt: 'Two horses saddled in the tall grass' },
 ]
 
-const HEAD = ['A HOLY HOLLY', 'TREE ILEX', 'PARAGUARIENSIS.']
+const HEAD = ['A HOLY HOLLY TREE']
+const BOTANICAL = 'Ilex paraguariensis'
 
 const PARAGRAPHS = [
   {
-    pos: 'lg:absolute lg:left-[12.1438rem] lg:top-[50.442rem] lg:w-[38rem]',
+    pos: 'lg:absolute lg:left-[12.1438rem] lg:top-[51.2rem] lg:w-[48rem]',
     lines: [
-      'Thousands of years ago, the Guaraní peoples',
-      'of South America discovered Ilex',
-      'paraguariensis and its energizing qualities.',
+      'Thousands of Years ago, the Guarani peoples',
+      'of South America discovered Ilex Paraguanesis.',
+      'Sipped through gourd and bombilla, drinking',
+      'mate offered clarity for the mind, warmth for',
+      'the body, and a bridge to something greater',
+      'than oneself: community.',
     ],
   },
   {
-    pos: 'lg:absolute lg:left-[12.1438rem] lg:top-[62.3232rem] lg:w-[38rem]',
+    pos: 'lg:absolute lg:left-[61.3125rem] lg:top-[56.5rem] lg:w-[49.4375rem] lg:text-right',
     lines: [
-      'Sipped through bombilla and gourd,',
-      'consuming mate offered clarity for the mind,',
-      'warmth for the body, and a bridge to',
-      'something greater than oneself community.',
-    ],
-  },
-  {
-    pos: 'lg:absolute lg:left-[72.7188rem] lg:top-[54.692rem] lg:w-[38rem]',
-    lines: [
-      'That spirit carried forward through the',
-      'centuries, finding a new home in the hands',
-      'of the gauchos the iconic horsemen of the',
-      'South American pampas.',
-    ],
-  },
-  {
-    pos: 'lg:absolute lg:left-[72.7188rem] lg:top-[68.9545rem] lg:w-[38rem]',
-    lines: [
-      'Nomadic and free, yerba mate became an',
-      'inseparable part of their daily life. To offer',
-      'mate became an act of fraternity: a wordless',
-      'invitation into trust and kinship. A shared',
-      'gourd means you are welcome.',
+      'That spirit carried forward through the centuries',
+      'into the hands of the gauchos, the iconic horsemen',
+      'of the pampas. Nomadic and free, yerba mate',
+      'became a daily ritual. To offer it was an act of',
+      'fraternity, a wordless invitation into trust and',
+      'kinship. A shared gourd means,',
+      'YOU ARE WELCOME HERE.',
     ],
   },
 ]
@@ -83,6 +71,14 @@ export default function OurStory() {
           delay={120}
           className="mt-3 text-[clamp(2.15rem,5.4vw,4.2rem)] leading-[1.13] lg:absolute lg:left-[11.5rem] lg:top-[30.4729rem] lg:mt-0 lg:text-[5.2062rem] lg:leading-[5.9rem] lg:tracking-[-0.031em]"
         />
+
+        <p
+          data-reveal="up"
+          style={{ '--d': '260ms' }}
+          className="mt-2 font-note text-[1.3rem] italic lg:absolute lg:left-[11.5rem] lg:top-[37.2rem] lg:mt-0 lg:text-[3rem] lg:leading-[3.4rem]"
+        >
+          {BOTANICAL}
+        </p>
       </div>
 
       {/* ---- traditional mate ritual photo ---- */}
@@ -98,13 +94,6 @@ export default function OurStory() {
             className="clip-zoom size-full object-cover"
           />
         </div>
-        <figcaption
-          data-reveal="up"
-          style={{ '--d': '360ms' }}
-          className="mt-3 text-right font-note text-[0.8rem] italic lg:absolute lg:right-0 lg:top-[37.5578rem] lg:mt-0 lg:text-[1.5688rem] lg:leading-[1.8813rem]"
-        >
-          Ilex paraguariensis
-        </figcaption>
       </figure>
 
       {/* ---- body copy ---- */}

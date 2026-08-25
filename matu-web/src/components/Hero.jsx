@@ -3,7 +3,7 @@ import SplitLines from './SplitLines'
 const HERO_LINES = [
   'Handpicked from the subtropical jungle, our',
   'yerba is grown with patience, dried with care, and',
-  'meant to be shared slowly.',
+  'meant to be shared.',
 ]
 
 export default function Hero({ ready }) {
@@ -24,16 +24,6 @@ export default function Hero({ ready }) {
           className="kenburns absolute inset-0 size-full object-cover brightness-[0.52] lg:inset-auto lg:left-[-1.4775rem] lg:top-[-8.969rem] lg:h-[92.216rem] lg:w-[122.955rem] lg:max-w-none"
         />
       </div>
-
-      <p
-        data-reveal="up"
-        className={`${state} font-geo text-[0.75rem] uppercase leading-[1.2] tracking-[0.235em] text-lime lg:absolute lg:inset-x-0 lg:top-[21.866rem] lg:text-[1.25rem] lg:leading-[1.5rem]`}
-        style={{ '--d': '260ms' }}
-      >
-        <span className="mr-[0.55em]">•••</span>
-        Protect the wild
-        <span className="ml-[0.55em]">•••</span>
-      </p>
 
       <SplitLines
         as="h1"

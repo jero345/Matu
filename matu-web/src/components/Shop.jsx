@@ -4,8 +4,8 @@ import { useCart } from '../context/CartContext'
 import { PRODUCTS, money } from '../data'
 
 const SUB = [
-  'Agro-ecological, 100% Argentine yerba mate',
-  'and the tools designed to brew it your way.',
+  '100% Argentine, agro-ecological yerba mate — plus',
+  '100% stainless steel tools to brew it your way.',
 ]
 
 function AddToBag({ product }) {

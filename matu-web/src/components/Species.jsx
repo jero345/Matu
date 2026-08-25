@@ -4,12 +4,11 @@ import { SPECIES } from '../data'
 
 const NBSP = ' '
 const HEAD = [`BENEATH THE${NBSP}`, "CANOPY, WE'RE", 'NOT ALONE.']
-// the artboard says "Hover", but the fact is unreachable that way on a touch
-// screen, so the prompt names both gestures and tapping opens the card too
+// The prompt says "Hover", but hover does not exist on a touch screen, so the
+// card also opens on tap — otherwise the fact would be unreachable there.
 const SUB = [
-  'Tap or hover a species to see a quick fact the same',
-  'creatures who share the shade with every yerba',
-  'mate leaf we harvest.',
+  'Hover over a species to learn who shares the shade',
+  'with every yerba mate leaf we harvest.',
 ]
 
 export default function Species() {
@@ -47,14 +46,30 @@ export default function Species() {
             style={{ '--d': `${(i % 3) * 90 + Math.floor(i / 3) * 130}ms` }}
             className="group relative aspect-[269/314] overflow-hidden rounded-xl lg:h-[19.6rem] lg:w-[16.79rem] lg:rounded-[1.11rem]"
           >
-            <img
-              src={animal.image}
-              alt={animal.name}
-              loading="lazy"
-              className={`size-full object-cover transition-transform duration-[1100ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.12] ${
+            {/* The engraved plate is the resting state; the photograph of the real
+                animal crossfades over it on hover — and on tap, where hover never
+                fires. Both sit inside the same wrapper so one zoom drives both. */}
+            <div
+              className={`relative size-full transition-transform duration-[1100ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.12] ${
                 open === i ? 'scale-[1.12]' : ''
               }`}
-            />
+            >
+              <img
+                src={animal.image}
+                alt={animal.name}
+                loading="lazy"
+                className="size-full object-cover"
+              />
+              <img
+                src={animal.photo}
+                alt=""
+                aria-hidden="true"
+                loading="lazy"
+                className={`absolute inset-0 size-full object-cover transition-opacity duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:opacity-100 ${
+                  open === i ? 'opacity-100' : 'opacity-0'
+                }`}
+              />
+            </div>
             <button
               type="button"
               onClick={() => setOpen(open === i ? -1 : i)}
@@ -68,7 +83,9 @@ export default function Species() {
                 open === i ? 'translate-y-0 opacity-100' : 'translate-y-3 opacity-0'
               }`}
             >
-              <span className="text-[0.8rem] text-lime lg:text-[1.4rem]">{animal.name}</span>
+              <span className="text-[0.8rem] text-lime lg:text-[1.4rem]">
+                {animal.name} <em className="italic opacity-80">{animal.nameEs}</em>
+              </span>
               <span className="text-[0.7rem] leading-[1.25] text-cream lg:text-[1.1rem] lg:leading-[1.25rem]">
                 {animal.fact}
               </span>

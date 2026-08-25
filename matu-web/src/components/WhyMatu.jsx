@@ -14,11 +14,9 @@ const P1 = [
 ]
 
 const P2 = [
-  'MATU represents that protective and guiding spirit,',
-  'riding freely across the pampas as a symbol of',
-  'sacred connection between humanity and the earth.',
-  'Each sip invites you to experience the spirit of the',
-  'land in its purest, most authentic form.',
+  'MATU is that guiding spirit, riding freely across the',
+  'pampas — a symbol of the sacred bond between',
+  'people and earth. Each sip is the land in its purest form.',
 ]
 
 export default function WhyMatu() {

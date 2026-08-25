@@ -1,8 +1,12 @@
 import Star from './Star'
+import Pegasus from './Pegasus'
 
 /**
  * The lime ticker bands. Two identical halves scroll by -50% so the loop is
  * seamless; the outer wrapper is skewed by scroll velocity (see useScrollFx).
+ *
+ * `text` takes a single phrase or a list of them, cycled in order. `mark` picks
+ * what separates them — the sunburst, or MATU the pegasus.
  */
 export default function Marquee({
   text,
@@ -10,17 +14,25 @@ export default function Marquee({
   gap = '1.9875rem',
   size = '1.5rem',
   duration = '48s',
+  mark = 'star',
   className = '',
 }) {
-  const half = Array.from({ length: repeat }, (_, i) => i)
+  const phrases = Array.isArray(text) ? text : [text]
+  // the two halves must hold the same run for the loop to be seamless, and the
+  // run has to be a whole number of cycles or the list would jump on repeat
+  const count = Math.max(repeat, phrases.length)
+  const run = Array.from({ length: count }, (_, i) => phrases[i % phrases.length])
+  const Mark = mark === 'pegasus' ? Pegasus : Star
+  const markClass =
+    mark === 'pegasus' ? 'h-[1.9rem] w-[2.03rem] spin-none' : 'size-[2.125rem] spin-slow'
 
   const group = (key) => (
     <div key={key} className="flex shrink-0 items-center" style={{ gap }}>
-      {half.map((i) => (
+      {run.map((phrase, i) => (
         <div key={i} className="group/item flex shrink-0 items-center" style={{ gap }}>
-          <Star className="size-[2.125rem] spin-slow" color="var(--color-ink)" />
+          <Mark className={markClass} color="var(--color-ink)" />
           <span className="whitespace-pre" style={{ fontSize: size }}>
-            {text}
+            {phrase}
           </span>
         </div>
       ))}

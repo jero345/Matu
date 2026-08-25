@@ -37,25 +37,34 @@ export default function App() {
         <main>
           <Hero ready={ready} />
           <Marquee
-            text="FROM THE GUARANI  TO THE GAUCHOS  TO YOU"
+            text="YOUR RITUAL IS WAITING"
             gap="1.9875rem"
             size="1.5rem"
             duration="52s"
           />
           <CleanestSip />
           <Shop />
+          <WhyMatu />
+          <FounderFrame />
+          <GrownWithin />
+          <Species />
           <OurStory />
           <Marquee
-            text="SHOP  MATU NOW"
+            text={[
+              '🇦🇷',
+              'NOT SMOKED',
+              'SIP SUAVE',
+              'BREW WILD',
+              'DRINK MATU',
+              'PROTECT THE WILD',
+            ]}
+            mark="pegasus"
+            repeat={12}
             gap="3.797rem"
             size="1.7875rem"
             duration="38s"
           />
-          <WhyMatu />
           <HealthBenefits />
-          <FounderFrame />
-          <GrownWithin />
-          <Species />
           <Newsletter />
         </main>
         <Footer />

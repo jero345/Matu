@@ -4,9 +4,8 @@ import { frames } from '../lib/frames'
 
 const HEAD = ['The cleanest', 'sip from soil', 'to straw.']
 const BODY = [
-  'Nature’s cleanest coffee alternative, regeneratively',
-  'grown in Argentina’s Atlantic Rainforest for',
-  'longlasting energy without the crash.',
+  'Nature’s cleanest coffee alternative — for',
+  'long-lasting energy without the crash.',
 ]
 
 export default function CleanestSip() {

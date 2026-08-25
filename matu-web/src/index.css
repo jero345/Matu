@@ -456,3 +456,8 @@ html.is-locked body {
     transition: none !important;
   }
 }
+
+/* the pegasus separates the ticker phrases; it should not spin */
+.spin-none {
+  animation: none;
+}

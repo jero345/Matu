@@ -8,8 +8,8 @@ import { HEALTH_CIRCLES, ALKALOIDS } from '../data'
 const NBSP = ' '
 
 const SUB = [
-  'A synergy of vitamins, amino acids and rare alkaloids',
-  'feeding real energy to real cells, gently.',
+  'A synergy of naturally occurring vitamins,',
+  'amino acids and alkaloids.',
 ]
 
 export default function HealthBenefits() {
@@ -36,28 +36,24 @@ export default function HealthBenefits() {
         <span>BENEFITS</span>
       </div>
 
-      {/* the middle line carries the sunburst, so it is built by hand */}
+      {/* the second line carries the sunburst, so it is built by hand */}
       <h2
         data-reveal="lines"
         className="has-lines text-center text-[clamp(2.1rem,5.2vw,4rem)] leading-[1.15] lg:absolute lg:inset-x-0 lg:top-[4.0922rem] lg:text-[4.2375rem] lg:leading-[4.8937rem]"
       >
         <span className="rline" style={{ '--d': '0ms' }}>
-          <span>FROM THE GUARANI{NBSP}</span>
+          <span>LONG LASTING ENERGY{NBSP}</span>
         </span>{' '}
         <span className="rline" style={{ '--d': '110ms' }}>
           <span>
-            <span className="inline-flex items-center justify-center gap-[0.7rem] lg:gap-0">
-              <span>TO THE</span>
+            <span className="inline-flex items-center justify-center gap-[0.7rem] lg:gap-[2.6rem]">
               <Star
-                className="spin-slow size-[0.62em] lg:ml-[10.03rem] lg:mr-[5.6875rem] lg:size-[4.1875rem]"
+                className="spin-slow size-[0.62em] lg:size-[4.1875rem]"
                 color="var(--color-ink)"
               />
-              <span className="lg:mr-[0.594rem]">GAUCHOS</span>
+              <span>WITHOUT THE CRASH.</span>
             </span>
           </span>
-        </span>{' '}
-        <span className="rline" style={{ '--d': '220ms' }}>
-          <span>TO YOU.</span>
         </span>
       </h2>
 
@@ -66,11 +62,11 @@ export default function HealthBenefits() {
         lines={SUB}
         delay={280}
         step={80}
-        className="mx-auto mt-5 max-w-[42rem] text-center text-[clamp(1rem,1.9vw,1.4rem)] leading-[1.35] lg:mx-0 lg:mt-0 lg:max-w-none lg:absolute lg:inset-x-0 lg:top-[22.567rem] lg:text-[2.0375rem] lg:leading-[2.375rem]"
+        className="mx-auto mt-5 max-w-[42rem] text-center text-[clamp(1rem,1.9vw,1.4rem)] leading-[1.35] lg:mx-0 lg:mt-0 lg:max-w-none lg:absolute lg:inset-x-0 lg:top-[16.5rem] lg:text-[2.0375rem] lg:leading-[2.375rem]"
       />
 
-      {/* ---- four gauges ---- */}
-      <div className="mt-12 grid justify-items-center gap-x-6 gap-y-10 sm:grid-cols-2 lg:absolute lg:left-[15.9375rem] lg:top-[30.8125rem] lg:mt-0 lg:flex lg:w-[88.125rem] lg:justify-between lg:gap-0">
+      {/* ---- three gauges ---- */}
+      <div className="mt-12 grid justify-items-center gap-x-6 gap-y-10 md:grid-cols-3 lg:absolute lg:left-[15.9375rem] lg:top-[27rem] lg:mt-0 lg:flex lg:w-[88.125rem] lg:justify-between lg:gap-0">
         {HEALTH_CIRCLES.map((item, i) => (
           <div
             key={item.title}
@@ -99,13 +95,13 @@ export default function HealthBenefits() {
       </div>
 
       {/* ---- alkaloid notes ---- */}
-      <div className="mt-14 grid gap-10 md:grid-cols-3 md:gap-6 lg:absolute lg:inset-x-[4.4rem] lg:top-[51.0096rem] lg:mt-0 lg:gap-0">
+      <div className="mt-14 grid gap-10 md:grid-cols-2 md:gap-6 lg:absolute lg:inset-x-[4.4rem] lg:top-[48rem] lg:mt-0 lg:flex lg:justify-between lg:gap-0">
         {ALKALOIDS.map((item, i) => (
           <div
             key={item.title}
             data-reveal="up"
             style={{ '--d': `${i * 140}ms` }}
-            className="relative text-center lg:h-[9rem]"
+            className="relative text-center lg:h-[9rem] lg:w-[26rem]"
           >
             <span className="block text-[0.9rem] lg:text-[1.3125rem] lg:leading-[1.575rem]">
               {item.number}
@@ -113,12 +109,13 @@ export default function HealthBenefits() {
             <h3 className="mt-4 text-[1.15rem] lg:absolute lg:inset-x-0 lg:top-[2.8023rem] lg:mt-0 lg:text-[1.875rem] lg:leading-[2.25rem]">
               {item.title}
             </h3>
-            <p className="mx-auto mt-3 max-w-[34ch] text-[0.8rem] leading-[1.2] lg:absolute lg:left-1/2 lg:top-[6.425rem] lg:mt-0 lg:w-[31rem] lg:max-w-none lg:-translate-x-1/2 lg:text-[1.3125rem] lg:leading-[1.5125rem]">
+            <p className="mx-auto mt-3 max-w-[34ch] text-[0.8rem] leading-[1.2] lg:absolute lg:left-1/2 lg:top-[6.425rem] lg:mt-0 lg:w-[26rem] lg:max-w-none lg:-translate-x-1/2 lg:text-[1.3125rem] lg:leading-[1.5125rem]">
               <Lines lines={item.lines} />
             </p>
           </div>
         ))}
       </div>
-    </section>
+
+   </section>
   )
 }

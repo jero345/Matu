@@ -44,10 +44,20 @@ export default function Header() {
           className="tap pointer-events-auto lg:mx-[10.1rem] lg:ml-[10.1rem] lg:mr-[11.869rem]"
           aria-label="MATU — inicio"
         >
+          {/* The full seal opens the page. Once the header compacts it hands
+              over to the plain wordmark: the seal is nearly square, and keeping
+              it would leave the scrolled bar several times too deep. They swap
+              outright rather than cross-fading — a faded-out image still takes
+              up its height, which is the thing being avoided. */}
+          <img
+            src="/img/sello-logo.webp"
+            alt="MATU — Misiones, Argentina · Yerba mate · Protect the wild"
+            className="w-[4.5rem] lg:w-[9rem] [html.is-scrolled_&]:hidden"
+          />
           <img
             src="/img/logo.webp"
             alt="MATU"
-            className="w-[7.5rem] origin-top transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] lg:w-[12.375rem] lg:[html.is-scrolled_&]:scale-[0.74]"
+            className="hidden w-[7.5rem] origin-top transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] lg:w-[12.375rem] lg:[html.is-scrolled_&]:scale-[0.74] [html.is-scrolled_&]:block"
           />
         </a>
 
