@@ -9,10 +9,14 @@ const HEAD = [`GROWN WITHIN${NBSP}`, 'THE FOREST, NOT', 'INSTEAD OF IT.']
 export default function GrownWithin() {
   return (
     <section className="relative isolate w-full overflow-hidden bg-cream px-6 py-16 text-ink lg:h-[67.5rem] lg:px-0 lg:py-0">
+      {/* A band, not a full plate: the artwork is line drawing on transparency
+          that rises from a baseline, so it is pinned to the bottom at its own
+          aspect instead of being stretched to cover. The cream of the section
+          shows through above it and behind every stroke. */}
       <img
-        src="/img/fondo4.webp"
+        src="/img/selva-linea.webp"
         alt=""
-        className="absolute inset-0 -z-10 size-full object-cover"
+        className="pointer-events-none absolute bottom-0 left-1/2 -z-10 w-[220%] max-w-none -translate-x-1/2 lg:left-0 lg:w-full lg:translate-x-0"
       />
 
       <SplitLines

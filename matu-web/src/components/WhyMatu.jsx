@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react'
 import Rail from './Rail'
 import SplitLines from './SplitLines'
 
@@ -15,6 +16,13 @@ const P2 = [
 ]
 
 export default function WhyMatu() {
+  const plate = useRef(null)
+
+  // the plate loops on its own; with reduced motion it holds on the poster frame
+  useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) plate.current?.pause()
+  }, [])
+
   return (
     <section
       id="why-matu"
@@ -85,24 +93,26 @@ export default function WhyMatu() {
           <div
             data-reveal="clip"
             style={{ '--curtain': 'var(--color-cream)' }}
-            className="relative overflow-hidden lg:absolute lg:right-0 lg:top-0 lg:h-[67.5rem] lg:w-[60rem]"
+            className="relative aspect-[8/9] overflow-hidden lg:absolute lg:right-0 lg:top-0 lg:aspect-auto lg:h-[67.5rem] lg:w-[60rem]"
           >
-            <img
-              src="/img/selva.webp"
-              alt="Sunlight breaking through the palms of the Atlantic Rainforest"
-              loading="lazy"
+            {/* The source is a 1172x1764 portrait, taller than either box, so it
+                is cropped by `object-cover`; the horse sits centred and survives
+                the crop. The phone keeps the 8:9 the still photo had, so the
+                section does not change height. */}
+            <video
+              ref={plate}
               className="clip-zoom size-full object-cover"
-            />
+              poster="/img/pegaso-selva-poster.webp"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              aria-label="MATU, the winged horse, over the Atlantic Rainforest"
+            >
+              <source src="/video/pegaso-selva.mp4" type="video/mp4" />
+            </video>
           </div>
-          {/* Centred on the plate: it spans 60-120rem across and the full 67.5rem
-              band, so the seal (square, 22rem) sits at 79 / 22.9rem. It reads white
-              over the photo — the artwork is dark, so it is knocked out rather than
-              shipped as a second file. */}
-          <img
-            src="/img/circular-symbol.webp"
-            alt="Cleanest sip from soil to straw"
-            className="spin-slow absolute left-1/2 top-1/2 w-[9rem] -translate-x-1/2 -translate-y-1/2 brightness-0 invert lg:left-[79rem] lg:top-[22.9rem] lg:w-[22rem] lg:max-w-none lg:translate-x-0 lg:translate-y-0"
-          />
         </div>
       </div>
     </section>

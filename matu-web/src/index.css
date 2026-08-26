@@ -434,6 +434,12 @@ html.is-locked body {
     animation: none !important;
   }
 
+  /* the carousel drift is an inline transition, so it needs !important here */
+  .carousel-media {
+    transition: none !important;
+    transform: none !important;
+  }
+
   .js [data-reveal],
   .js .clip-zoom,
   .js .rline > span {
