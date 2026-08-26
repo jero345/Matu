@@ -149,8 +149,9 @@ export const ALKALOIDS = [
 export const UNSMOKED = {
   title: 'UNSMOKED',
   lines: [
-    'Unlike big commercial brands laden with carcinogens (PAHs), MATU is never',
-    'chemically smoked — and it’s third-party tested in U.S. labs.',
+    'Unlike big commercial brands laden with carcinogens',
+    '(PAHs), MATU is never chemically smoked — and it’s',
+    'third-party tested in U.S. labs.',
   ],
 }
 

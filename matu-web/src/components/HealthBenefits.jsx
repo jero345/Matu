@@ -70,19 +70,19 @@ export default function HealthBenefits() {
         className="mx-auto mt-5 max-w-[42rem] text-center text-[clamp(1rem,1.9vw,1.4rem)] leading-[1.35] lg:mx-0 lg:mt-0 lg:max-w-none lg:absolute lg:inset-x-0 lg:top-[16.5rem] lg:text-[2.0375rem] lg:leading-[2.375rem]"
       />
 
-      {/* the unsmoked claim reads straight off the sub-headline */}
+      {/* Same rank as the sub-headline and set right under it: it reads as the
+          second half of that statement, not as a footnote. Matching type means
+          matching measure, so the copy is broken to the sub's line length. */}
       <div
         data-reveal="up"
         style={{ '--d': '360ms' }}
-        className="mx-auto mt-6 max-w-[46rem] text-center lg:absolute lg:inset-x-0 lg:top-[23.5rem] lg:mt-0 lg:max-w-none"
+        className="mx-auto mt-4 max-w-[42rem] text-center text-[clamp(1rem,1.9vw,1.4rem)] leading-[1.35] lg:absolute lg:inset-x-0 lg:top-[22.4rem] lg:mt-0 lg:max-w-none lg:text-[2.0375rem] lg:leading-[2.375rem]"
       >
-        <p className="mx-auto max-w-[52ch] text-[0.8rem] leading-[1.3] lg:mt-[0.6rem] lg:max-w-none lg:text-[1.3125rem] lg:leading-[1.5125rem]">
-          <Lines lines={UNSMOKED.lines} />
-        </p>
+        <Lines lines={UNSMOKED.lines} />
       </div>
 
       {/* ---- three gauges ---- */}
-      <div className="mt-12 grid justify-items-center gap-x-6 gap-y-10 md:grid-cols-3 lg:absolute lg:left-[15.9375rem] lg:top-[31rem] lg:mt-0 lg:flex lg:w-[88.125rem] lg:justify-between lg:gap-0">
+      <div className="mt-12 grid justify-items-center gap-x-6 gap-y-10 md:grid-cols-3 lg:absolute lg:left-[15.9375rem] lg:top-[32rem] lg:mt-0 lg:flex lg:w-[88.125rem] lg:justify-between lg:gap-0">
         {HEALTH_CIRCLES.map((item, i) => (
           <div
             key={item.title}

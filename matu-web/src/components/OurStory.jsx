@@ -58,13 +58,9 @@ const PARAGRAPHS = [
 /* horse1/horse2 ship with the rounded corners baked in — a 57px arc over
    1581px of transparency — so no CSS radius can undo it. Every slide is blown
    up 8% and re-centred instead, which pushes those corners outside the clipping
-   box and keeps all six cropping to the identical frame. The drift below scales
-   on top of that, so the corners stay covered at either end of it. */
+   box and keeps all six cropping to the identical frame. It is a crop, not an
+   effect: nothing animates it. */
 const MEDIA = 'carousel-media absolute left-[-4%] top-[-4%] size-[108%] max-w-none object-cover'
-
-/* The drift: a slide eases from one scale to the other across its whole turn,
-   alternating direction so consecutive slides do not all push the same way. */
-const DRIFT = 1.09
 
 /* How long a still holds before the carousel moves on. The clip overrides it
    with its own `hold`, so it is not cut off a third of the way through. */
@@ -188,19 +184,13 @@ export default function OurStory() {
           style={{ '--curtain': 'var(--color-cream)' }}
           className="relative h-[70vw] overflow-hidden lg:h-full"
         >
-          <div className="clip-zoom relative size-full">
+          <div className="relative size-full">
             {SLIDES.map((item, i) => {
               const live = i === slide
-              // odd slides drift the other way, so the eye is not always pulled in
-              const out = i % 2 === 1
+              // the stills hold still: slides cross-fade and nothing scales
               const style = {
-                transition: `opacity 1100ms cubic-bezier(0.16,1,0.3,1), transform ${
-                  (item.hold ?? HOLD) + 1400
-                }ms linear`,
+                transition: 'opacity 1100ms cubic-bezier(0.16,1,0.3,1)',
                 opacity: live ? 1 : 0,
-                // the drift only runs on screen, so slide one still starts at rest
-                // and eases off the moment the band is scrolled to
-                transform: `scale(${(live && onScreen) !== out ? DRIFT : 1})`,
               }
               return item.video ? (
                 <video
