@@ -58,7 +58,9 @@ export default function CartDrawer() {
 
   return (
     <div
-      className={`fixed inset-0 z-[70] ${open ? '' : 'pointer-events-none'}`}
+      /* closed, the panel is parked past the right edge; without clipping here
+         it stretches the document and the page can be panned sideways */
+      className={`fixed inset-0 z-[70] overflow-hidden ${open ? '' : 'pointer-events-none'}`}
       aria-hidden={!open}
     >
       <div

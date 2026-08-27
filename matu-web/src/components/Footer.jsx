@@ -7,7 +7,7 @@ const FOOTER_NAV = [NAV[0], NAV[2], NAV[1], NAV[3]]
 
 export default function Footer() {
   return (
-    <footer className="relative w-full bg-ink px-6 py-14 lg:h-[20.8125rem] lg:px-0 lg:py-0">
+    <footer className="relative w-full overflow-hidden bg-ink px-6 py-14 lg:h-[20.8125rem] lg:overflow-visible lg:px-0 lg:py-0">
       {/* ---- floating shop panel, it overlaps the newsletter band ---- */}
       {/* The phone mirrors the artboard rather than stacking: copy down the left,
           the pack whole and bleeding off the right edge. `pr` reserves the column

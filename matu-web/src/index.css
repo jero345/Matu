@@ -41,6 +41,10 @@ html {
   font-size: 16px;
   -webkit-text-size-adjust: 100%;
   scroll-behavior: smooth;
+  /* `overflow-x: hidden` on the body alone is not enough: iOS Safari still lets
+     the page be panned sideways when anything overhangs. `clip` refuses the pan
+     without turning the root into a scroll container. */
+  overflow-x: clip;
 }
 
 /* The artboard is 1920 wide -> 120rem. Lock 1rem to 1/120th of the

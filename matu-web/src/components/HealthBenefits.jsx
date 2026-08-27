@@ -3,13 +3,18 @@ import Star from './Star'
 import Lines from './Lines'
 import SplitLines from './SplitLines'
 import GaugeCircle from './GaugeCircle'
-import { HEALTH_CIRCLES, ALKALOIDS, UNSMOKED } from '../data'
+import { HEALTH_CIRCLES, ALKALOIDS } from '../data'
 
 const NBSP = ' '
 
+/* One statement, not two blocks: the unsmoked claim finishes the sentence that
+   starts with the synergy line, so it is set as a single paragraph. */
 const SUB = [
   'A synergy of naturally occurring vitamins,',
-  'amino acids and alkaloids.',
+  'amino acids and alkaloids. Unlike big',
+  'commercial brands laden with carcinogens',
+  '(PAHs), MATU is never chemically smoked —',
+  'and it’s third-party tested in U.S. labs.',
 ]
 
 export default function HealthBenefits() {
@@ -70,16 +75,6 @@ export default function HealthBenefits() {
         className="mx-auto mt-5 max-w-[42rem] text-center text-[clamp(1rem,1.9vw,1.4rem)] leading-[1.35] lg:mx-0 lg:mt-0 lg:max-w-none lg:absolute lg:inset-x-0 lg:top-[16.5rem] lg:text-[2.0375rem] lg:leading-[2.375rem]"
       />
 
-      {/* Same rank as the sub-headline and set right under it: it reads as the
-          second half of that statement, not as a footnote. Matching type means
-          matching measure, so the copy is broken to the sub's line length. */}
-      <div
-        data-reveal="up"
-        style={{ '--d': '360ms' }}
-        className="mx-auto mt-4 max-w-[42rem] text-center text-[clamp(1rem,1.9vw,1.4rem)] leading-[1.35] lg:absolute lg:inset-x-0 lg:top-[22.4rem] lg:mt-0 lg:max-w-none lg:text-[2.0375rem] lg:leading-[2.375rem]"
-      >
-        <Lines lines={UNSMOKED.lines} />
-      </div>
 
       {/* ---- three gauges ---- */}
       <div className="mt-12 grid justify-items-center gap-x-6 gap-y-10 md:grid-cols-3 lg:absolute lg:left-[15.9375rem] lg:top-[32rem] lg:mt-0 lg:flex lg:w-[88.125rem] lg:justify-between lg:gap-0">
@@ -114,13 +109,13 @@ export default function HealthBenefits() {
       </div>
 
       {/* ---- alkaloid notes ---- */}
-      <div className="mt-14 grid gap-10 md:grid-cols-2 md:gap-6 lg:absolute lg:inset-x-[4.4rem] lg:top-[52rem] lg:mt-0 lg:flex lg:justify-between lg:gap-0">
+      <div className="mt-14 grid gap-0 divide-y divide-ink/20 md:grid-cols-2 md:gap-6 md:divide-y-0 lg:absolute lg:inset-x-[4.4rem] lg:top-[52rem] lg:mt-0 lg:flex lg:justify-between lg:gap-0">
         {ALKALOIDS.map((item, i) => (
           <div
             key={item.title}
             data-reveal="up"
             style={{ '--d': `${i * 140}ms` }}
-            className="relative text-center lg:h-[9rem] lg:w-[31rem]"
+            className="relative py-8 text-center first:pt-0 last:pb-0 md:py-0 lg:h-[9rem] lg:w-[31rem]"
           >
             <span className="block text-[0.9rem] lg:text-[1.3125rem] lg:leading-[1.575rem]">
               {item.number}
